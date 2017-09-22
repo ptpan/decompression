@@ -1,0 +1,1637 @@
+#-----------------------------------------------------------
+# Vivado v2014.3.1 (64-bit)
+# SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+# IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+# Start of session at: Fri Sep 22 18:21:13 2017
+# Process ID: 1868
+# Log file: /home/ppan/vivado.log
+# Journal file: /home/ppan/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/ppan/summer_intern/decompression/decompression.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/ppan/Vivado/Vivado/2014.3.1/data/ip'.
+close [ open /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v w ]
+add_files /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v
+close [ open /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v w ]
+add_files /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v
+update_compile_order -fileset sources_1
+close [ open /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v w ]
+add_files /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close [ open /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v w ]
+add_files /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir /home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v w ]
+add_files -fileset sim_1 /home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v
+update_compile_order -fileset sim_1
+set_property top tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:31]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:31]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:33]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:33]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:35]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:35]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:38]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:38]
+ERROR: [VRFC 10-1040] module bitmap_to_num ignored due to previous errors [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:23]
+INFO: [USF-XSim-99] Step results log file:'/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:31]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:31]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:33]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:33]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:35]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:35]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:38]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register num is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:38]
+ERROR: [VRFC 10-1040] module bitmap_to_num ignored due to previous errors [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:23]
+INFO: [USF-XSim-99] Step results log file:'/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+ERROR: [VRFC 10-46] sum_2 is already declared [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v:30]
+ERROR: [VRFC 10-91] sum_3 is not declared [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v:41]
+ERROR: [VRFC 10-91] sum_3 is not declared [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v:45]
+ERROR: [VRFC 10-1040] module count_one ignored due to previous errors [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v:23]
+INFO: [USF-XSim-99] Step results log file:'/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:38]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:38]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:40]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:40]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:42]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:42]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:45]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register bytes_to_read is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:45]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register data_out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:53]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register data_out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:53]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register next_offset is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:54]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register next_offset is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:54]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register data_out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:57]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register data_out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:57]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register next_offset is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:58]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register next_offset is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:58]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register data_out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:61]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register data_out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:61]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register next_offset is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:62]
+INFO: [#UNDEF] Sorry, too many errors..
+INFO: [USF-XSim-99] Step results log file:'/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:47]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:47]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:50]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:50]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:53]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:53]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:56]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register out is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:56]
+ERROR: [VRFC 10-1040] module decompressor ignored due to previous errors [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:1]
+INFO: [USF-XSim-99] Step results log file:'/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+WARNING: [VRFC 10-756] identifier soft_reset is used before its declaration [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:46]
+ERROR: [VRFC 10-402] cannot assign to memory offset directly [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:77]
+ERROR: [VRFC 10-91] output_enable_3rd_ppl is not declared [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:141]
+ERROR: [VRFC 10-91] output_enable_3rd_ppl is not declared [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:156]
+ERROR: [VRFC 10-91] output_enable_3rd_ppl is not declared [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:160]
+ERROR: [VRFC 10-91] output_enable_3rd_ppl is not declared [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:162]
+ERROR: [VRFC 10-1040] module decompression ignored due to previous errors [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:1]
+INFO: [USF-XSim-99] Step results log file:'/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aclk is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:48]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aclk is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:48]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aclk is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:52]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aclk is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:52]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aresetn is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:53]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aresetn is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:53]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aresetn is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:55]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aresetn is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:55]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aresetn is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:57]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register aresetn is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:57]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tvalid is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:60]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tvalid is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:60]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tkeep is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:61]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tkeep is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:61]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tlast is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:62]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tlast is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:62]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tdata is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:65]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tdata is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:65]
+ERROR: [VRFC 10-1280] procedural assignment to a non-register tdata is not permitted, left-hand side should be reg/integer/time/genvar [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:69]
+INFO: [#UNDEF] Sorry, too many errors..
+INFO: [USF-XSim-99] Step results log file:'/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log'
+ERROR: [USF-XSim-62] 'compile' step failed with error(s). Please check the Tcl console output or '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xvlog.log' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-529] concurrent assignment to a non-net tready is not permitted [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:35]
+WARNING: [VRFC 10-278] actual bit length 512 differs from formal bit length 256 for port data_in [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:92]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 256 for port axis_tdata_c2s [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:40]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port axis_tkeep_c2s [/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v:41]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-60] num_gen[0].i is not a constant [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v:37]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or '' file for more information.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 2034993540 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 03:42:49 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:06 . Memory (MB): peak = 5842.688 ; gain = 54.352 ; free physical = 1643 ; free virtual = 6705
+launch_runs synth_1
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library work [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library work [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library work [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library work [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library work [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:1]
+INFO: [HDL 9-1654] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library work [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v:1]
+[Sat Sep 23 03:42:54 2017] Launched synth_1...
+Run output will be captured here: /home/ppan/summer_intern/decompression/decompression.runs/synth_1/runme.log
+launch_runs impl_1
+[Sat Sep 23 03:44:16 2017] Launched impl_1...
+Run output will be captured here: /home/ppan/summer_intern/decompression/decompression.runs/impl_1/runme.log
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+reset_run impl_1 -noclean_dir 
+save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 3864022642 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 03:48:42 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 4063277355 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 03:51:40 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 3573436463 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 03:53:11 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 3944056089 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:02:40 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+restart
+INFO: [Simtcl 6-17] Simulation restarted
+run 10 us
+save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 721495818 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/usa..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:07:58 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 3894702082 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:09:30 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 1769264218 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:10:32 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 1310436123 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:25:34 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 4211765945 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:31:35 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+INFO: [Common 17-344] 'run_program' was cancelled
+1
+    while executing
+"catch {rdi::run_program $scr_file} error_log"
+    (procedure "::tclapp::xilinx::xsim::usf_launch_script" line 35)
+    invoked from within
+"::tclapp::xilinx::xsim::usf_launch_script "xsim" $step"
+    (procedure "tclapp::xilinx::xsim::elaborate" line 13)
+    invoked from within
+"tclapp::xilinx::xsim::elaborate { -simset sim_1 -mode behavioral -run_dir /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav -int_os..."
+INFO: [Common 17-344] 'launch_simulation' was cancelled
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 3167710379 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:44:02 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+xvlog -m64 -prj tb_vlog.prj
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bitmap_to_num
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module count_one
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module length_decoder
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module extractor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompression
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.srcs/sim_1/new/tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto 60345d78f8da43a6af2a33d9390c99d6 --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_behav xil_defaultlib.tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bitmap_to_num
+Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.extractor
+Compiling module xil_defaultlib.decompressor
+Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot tb_behav
+
+****** Webtalk v2014.3.1 (64-bit)
+  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+    ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
+
+source /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 1150933146 -regid "" -xml /home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/us..."
+    (file "/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/xsim.dir/tb_behav/webtalk/xsim_webtalk.tcl" line 41)
+INFO: [Common 17-206] Exiting Webtalk at Sat Sep 23 04:50:49 2017...
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in '/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_behav -key {Behavioral:sim_1:Functional:tb} -tclbatch {tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2014.3
+Time resolution is 1 ps
+open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
+source tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+archive_project /home/ppan/summer_intern/decompression.xpr.zip -force
+INFO: [Coretcl 2-137] starting archive...
+Scanning sources...
+Finished scanning sources
+INFO: [Coretcl 2-1211] Creating project copy for archival...
+INFO: [Coretcl 2-1213] Including run results for 'synth_1'
+INFO: [Coretcl 2-1213] Including run results for 'impl_1'
