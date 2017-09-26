@@ -22,10 +22,10 @@
 
 module extractor(
     input           [1:0]           bitmap, 
-    input           [9:0]           offset, 
+    input           [15:0]          offset, 
     input           [511:0]         data_in, 
-    output reg      [9:0]           next_offset, 
-    output reg      [31:0]          data_out
+    output reg      [15:0]          next_offset, 
+    output reg      [31:0]          extract_out
     );
     
     
@@ -50,20 +50,20 @@ end
 // generate output signals
 always@ (*) begin
     if (bytes_to_read == 3'h0) begin
-        data_out = 32'b0;
+        extract_out = 32'b0;
         next_offset = offset;
     end
     else if (bytes_to_read == 3'h2) begin
-        data_out = {16'b0, data_in[offset +: 16]};
+        extract_out = {16'b0, data_in[offset +: 16]};
         next_offset = offset + 16;
     end
     else if (bytes_to_read == 3'h4) begin
-        data_out = data_in[offset +: 32];
+        extract_out = data_in[offset +: 32];
         next_offset = offset + 32;
     end
     else begin
         // impossible, treat as 0
-        data_out = 32'b0;
+        extract_out = 32'b0;
         next_offset = offset;
     end
 end

@@ -84,13 +84,48 @@ initial begin
     
     #10;
     // 128
-    tdata = 256'hFFFFFFFFFFFFFFFFFFFF_1514131211100f0e0d0c0b0a09080706050403020100;
+    tdata = 256'hFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF_09080706050403020100;
     
-    #10;
     // real payload starts here
-    tdata = 256'h0;
-    tkeep = 32'h3;
-    tlast = 1'b1;        
+// full data test, all FP's are uncompressed
+//    #10;
+//    tdata = 256'h4d4c4b4a494847464544434241403f3e3d3c3b3a39383736353433323130FFFF;
+//    tkeep = 32'hFFFF_FFFF;
+//    tlast = 1'b0;
+    
+//    #10;
+//    tdata = 256'h6b6a696867666564636261605f5e5d5c5b5a59585756555453525150FFFF4f4e;
+//    tkeep = 32'hFFFF_FFFF;
+//    tlast = 1'b0;
+    
+//    #10;
+//    tdata = 256'h6f6e6d6c;
+//    tkeep = 32'hF;
+//    tlast = 1'b1;
+
+// mix test, both compressed and uncompressed data are included
+    #10;
+    tdata = 256'hAABBCCDD_5555_4444_3333_2222_BE2A_CCDDEEFF_BBCCDDEE_AABBCCDD_1111_0000_F0E8;
+    tkeep = 32'hFFFF_FFFF;
+    tlast = 1'b0;
+    #10; 
+    tdata = 256'h6666_BBCCDDEE;
+    tkeep = 32'h3F;
+    tlast = 1'b1;
+    #10; // tready == 1'b0 
+    tdata = 256'h6666_BBCCDDEE;
+    tkeep = 32'h3F;
+    tlast = 1'b1;
+
+
+
+
+// 0 test
+// data cannot fill up the pipeline, failed. 
+// the frame must contain at least 161 bytes (to fill up the pipeline)
+//    tdata = 256'h0;
+//    tkeep = 32'h3;
+//    tlast = 1'b1;        
     
     #10;
     tkeep = 32'h0;

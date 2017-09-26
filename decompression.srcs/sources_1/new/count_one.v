@@ -22,12 +22,12 @@
 
 module count_one(
     input       [31:0]      in, 
-    output      [9:0]       out
+    output      [15:0]      out
     );
 
-wire    [9:0]   sum_1[15:0];
-wire    [9:0]   sum_2[7:0];
-wire    [9:0]   sum_3[3:0];
+wire    [15:0]   sum_1[15:0];
+wire    [15:0]   sum_2[7:0];
+wire    [15:0]   sum_3[3:0];
 
 genvar i, j, k;
 generate

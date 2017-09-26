@@ -15,13 +15,25 @@ module decompression(
     input                       axis_tready_c2s
 );
 
-reg     [15:0]      bitmap_reg;
 reg     [255:0]     data_reg, data_reg_2nd_ppl, data_reg_3rd_ppl;
 wire    [511:0]     concat_in;
+wire    [255:0]     out;
+
 assign concat_in = {data_reg, data_reg_2nd_ppl};
 
-integer cursor, byte_cnt, byte_cnt_2nd_ppl, byte_cnt_3rd_ppl;
+reg     [15:0]      cursor;
+wire    [15:0]      next_cursor;
+
+integer byte_cnt, byte_cnt_2nd_ppl, byte_cnt_3rd_ppl;
 wire    [31:0]   cursor_i;
+
+extract_and_decomp extract_and_decomp_inst(
+    .concat_in(concat_in), 
+    .cursor(cursor), 
+    .out(out), 
+    .next_cursor(next_cursor)
+);
+
 
 wire    [9:0]       payload_byte;
 wire                input_enable;
@@ -68,42 +80,6 @@ assign axis_tkeep_c2s_i = (axis_tlast_c2s_i == 1'b0) ?
 assign axis_tlast_c2s_i = (tlast_asserted_3rd_ppl == 1'b1) && 
                           (next_bitmap_offset -256 >= 8*valid_bytes);
 
-
-//-----------------------------------------------------
-// combinatorial logic to decompress the data
-genvar ex_dc_i;
-wire [9:0]      offset[7:0];
-wire [9:0]      next_offset[7:0];
-wire [255:0]    data_out;
-wire [255:0]    out;
-
-assign offset[7] = next_offset[6];
-assign offset[6] = next_offset[5];
-assign offset[5] = next_offset[4];
-assign offset[4] = next_offset[3];
-assign offset[3] = next_offset[2];
-assign offset[2] = next_offset[1];
-assign offset[1] = next_offset[0];
-assign offset[0] = 10'b0; 
-
-generate
-    for (ex_dc_i = 0; ex_dc_i < 8; ex_dc_i = ex_dc_i + 1) begin: ex_dc_gen
-        extractor ex(
-            .bitmap(bitmap_reg[2*ex_dc_i +: 2]), 
-            .offset(offset[ex_dc_i]),
-            .data_in(concat_in), 
-            .next_offset(next_offset[ex_dc_i]), 
-            .data_out(data_out[32*ex_dc_i +: 32])
-        );
-        decompressor decomp(
-            .bitmap(bitmap_reg[2*ex_dc_i +: 2]), 
-            .in(data_out[32*ex_dc_i +: 32]), 
-            .out(out[32*ex_dc_i +: 32])
-        );
-    end
-endgenerate
-//-----------------------------------------------------
-
 always@ (posedge axis_aclk or negedge axis_aresetn) begin
     if (axis_aresetn == 1'b0) begin
         data_reg <= 256'b0;
@@ -138,7 +114,7 @@ always@ (posedge axis_aclk or negedge axis_aresetn) begin
             byte_cnt_2nd_ppl <= 0;
             byte_cnt_3rd_ppl <= 0;       
         end
-        bitmap_reg <= concat_in[cursor +: 16];
+        // bitmap_reg <= concat_in[cursor +: 16];
         concat_out_high <= out[79:0];
         if (byte_cnt_3rd_ppl <= 96)
             concat_out_low <= data_reg_2nd_ppl[175:0];

@@ -5,7 +5,6 @@ Multi-threading is on. Using 2 slave threads.
 Starting static elaboration
 Completed static elaboration
 Starting simulation data flow analysis
-WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
@@ -14,7 +13,6 @@ WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.sr
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
-WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v" Line 1. Module decompression_default doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
@@ -25,12 +23,17 @@ WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.sr
 WARNING: [XSIM 43-4099] "/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v" Line 1. Module decompressor doesn't have a timescale but at least one module in design has a timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.bitmap_to_num
-Compiling module xil_defaultlib.length_decoder_default
+Compiling module xil_defaultlib.concat_in_reg
 Compiling module xil_defaultlib.count_one
+Compiling module xil_defaultlib.recvd_bytes
+Compiling module xil_defaultlib.done_reg
+Compiling module xil_defaultlib.sr_latch
+Compiling module xil_defaultlib.cursor_reg
+Compiling module xil_defaultlib.length_reg
 Compiling module xil_defaultlib.extractor
 Compiling module xil_defaultlib.decompressor
-Compiling module xil_defaultlib.decompression_default
+Compiling module xil_defaultlib.extract_and_decomp_default
+Compiling module xil_defaultlib.decompression
 Compiling module xil_defaultlib.tb
 Compiling module xil_defaultlib.glbl
 Waiting for 2 sub-compilation(s) to finish...

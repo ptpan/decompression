@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="2" Path="/home/ppan/summer_intern/decompression/decompression.sim/sim_1/behav/.Xil/Vivado-1868-ppan-QiTianM6600-N000/PrjAr/_X_/decompression.xpr">
+<Project Version="7" Minor="2" Path="/home/ppan/.Xil/Vivado-26723-ppan-QiTianM6600-N000/PrjAr/_X_/decompression.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="ad4020234eaa4d5394536c21d8eeec3b"/>
+    <Option Name="Id" Val="d965957656574789bba25823325e2926"/>
     <Option Name="Part" Val="xc7vx690tffg1761-2"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="BoardPart" Val="xilinx.com:vc709:part0:1.4"/>
@@ -16,28 +16,10 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/bitmap_to_num.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../decompression.srcs/sources_1/new/bitmap_to_num.v"/>
-          <Attr Name="ImportTime" Val="1506108913"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/count_one.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../decompression.srcs/sources_1/new/count_one.v"/>
-          <Attr Name="ImportTime" Val="1506108933"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/length_decoder.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../decompression.srcs/sources_1/new/length_decoder.v"/>
-          <Attr Name="ImportTime" Val="1506109362"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v"/>
+          <Attr Name="ImportTime" Val="1506438532"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -45,8 +27,8 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/extractor.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../decompression.srcs/sources_1/new/extractor.v"/>
-          <Attr Name="ImportTime" Val="1506109282"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v"/>
+          <Attr Name="ImportTime" Val="1506358643"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -54,8 +36,98 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/decompressor.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../decompression.srcs/sources_1/new/decompressor.v"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v"/>
           <Attr Name="ImportTime" Val="1506109001"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/done_reg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/done_reg.v"/>
+          <Attr Name="ImportTime" Val="1506463839"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/recvd_bytes.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/recvd_bytes.v"/>
+          <Attr Name="ImportTime" Val="1506457092"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/cursor_reg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/cursor_reg.v"/>
+          <Attr Name="ImportTime" Val="1506465832"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/concat_in_reg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/concat_in_reg.v"/>
+          <Attr Name="ImportTime" Val="1506423166"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/length_reg.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/length_reg.v"/>
+          <Attr Name="ImportTime" Val="1506445502"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/extract_and_decomp.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/extract_and_decomp.v"/>
+          <Attr Name="ImportTime" Val="1506358879"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/sr_latch.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/sr_latch.v"/>
+          <Attr Name="ImportTime" Val="1506440595"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/decompression.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/decompression.v"/>
+          <Attr Name="ImportTime" Val="1506468562"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/bitmap_to_num.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v"/>
+          <Attr Name="ImportTime" Val="1506108913"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/length_decoder.v">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v"/>
+          <Attr Name="ImportTime" Val="1506109362"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -63,8 +135,9 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/decompression_top.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../decompression.srcs/sources_1/new/decompression_top.v"/>
-          <Attr Name="ImportTime" Val="1506113973"/>
+          <Attr Name="UserDisabled" Val="1"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v"/>
+          <Attr Name="ImportTime" Val="1506360571"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -86,8 +159,8 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/new/tb.v">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../../../decompression.srcs/sim_1/new/tb.v"/>
-          <Attr Name="ImportTime" Val="1506113443"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../summer_intern/decompression/decompression.srcs/sim_1/new/tb.v"/>
+          <Attr Name="ImportTime" Val="1506467540"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
