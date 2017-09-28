@@ -29,9 +29,9 @@ assign sum[2] = (din[14:4] == 0 && din[2] == 1) ? 13 : 0;
 assign sum[1] = (din[14:3] == 0 && din[1] == 1) ? 14 : 0;
 assign sum[0] = (din[14:2] == 0 && din[0] == 1) ? 15 : 0;
 
-assign total_sum = sum[14] + sum[13] + sum[12] + sum[11] + sum[10] + 
-                   sum[9] + sum[8] + sum[7] + sum[6] + sum[5] + sum[4] + 
-                   sum[3] + sum[2] + sum[1] + sum[0];
+assign total_sum = ((sum[14] + (sum[13] + sum[12])) + ((sum[11] + sum[10]) + 
+                   (sum[9] + sum[8]))) + (((sum[7] + sum[6]) + (sum[5] + sum[4])) + 
+                   ((sum[3] + sum[2]) + (sum[1] + sum[0])));
 
 assign exp = 127 - total_sum;
 
@@ -41,19 +41,18 @@ assign dout = {din[15], exp, mantissa};
 
 
 // pure combinatorial logic
-always@ (bitmap or in) begin
-    if (bitmap == 2'b00)
-        // output is 0 
-        out = 32'b0;
-    else if (bitmap == 2'b10)
-        // decompression happens here
-        out = dout;
-    else if (bitmap == 2'b11) 
-        // the same as input data
-        out = in;
-    else
-        // impossible, treat it as 0
-        out = 32'b0;
+
+
+always@(*) begin
+
+    case(bitmap)
+        2'b00,2'b01:
+            out = 0;
+        2'b10:
+            out = dout;
+        2'b11:
+            out = in;
+    endcase
 end
 
 endmodule

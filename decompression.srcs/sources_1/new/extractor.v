@@ -31,42 +31,31 @@ module extractor(
     
 //---------------------------------------
 // generate bytes_to_read
-reg [2:0] bytes_to_read;
 
 always@ (bitmap) begin
-    if (bitmap == 2'b00)
-        bytes_to_read = 3'h0;
-    else if (bitmap == 2'b10)
-        bytes_to_read = 3'h2;
-    else if (bitmap == 2'b11)
-        bytes_to_read = 3'h4;
-    else 
-        // impossible, treat as 0
-        bytes_to_read = 3'h0; 
+    
+    case(bitmap)
+        2'b01,2'b00: begin
+            extract_out <= 32'b0;
+            next_offset <= offset;
+        end
+           
+        2'b10: begin
+            extract_out <= {16'b0, data_in[offset +: 16]};
+            next_offset <= offset + 16;
+        end
+        2'b11: begin
+            extract_out <= data_in[offset +: 32];
+            next_offset <= offset + 32;
+        end
+
+    endcase
 end
 //---------------------------------------
 
 //---------------------------------------
 // generate output signals
-always@ (*) begin
-    if (bytes_to_read == 3'h0) begin
-        extract_out = 32'b0;
-        next_offset = offset;
-    end
-    else if (bytes_to_read == 3'h2) begin
-        extract_out = {16'b0, data_in[offset +: 16]};
-        next_offset = offset + 16;
-    end
-    else if (bytes_to_read == 3'h4) begin
-        extract_out = data_in[offset +: 32];
-        next_offset = offset + 32;
-    end
-    else begin
-        // impossible, treat as 0
-        extract_out = 32'b0;
-        next_offset = offset;
-    end
-end
+
 //---------------------------------------
 
 endmodule

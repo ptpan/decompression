@@ -31,7 +31,7 @@ module done_reg(
 
 // wire done_i;
 
-assign done = (is_last == 1'b1) & (next_cursor == (8 * recvd_bytes) + 256);    
+assign done = (is_last == 1'b1) & (next_cursor == (recvd_bytes << 3 ) + 256);    
 
 //always@ (posedge aclk or negedge aresetn) begin
 //    if (aresetn == 1'b0) begin

@@ -26,16 +26,16 @@ module bitmap_to_num(
     );
     
 // 00 -> 00, 10 -> 01, 11 -> 10
-always@ (bitmap) begin
-    if (bitmap == 2'b00)
-        num = 2'b00;
-    else if (bitmap == 2'b10)
-        num = 2'b01;
-    else if (bitmap == 2'b11)
-        num = 2'b10;
-    else
-        // impossible, treat as 0
-        num = 2'b00;
+
+always@(*)begin
+    case(bitmap)
+        2'b00:
+            num = 0;
+        default:
+            num = bitmap-2'b01;
+    endcase
 end
+    
+
 
 endmodule

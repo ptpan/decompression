@@ -26,7 +26,7 @@ module cursor_reg(
     input               is_last,
 //    input       [15:0]  length, 
     input       [15:0]  next_cursor,
-    output      [15:0]  cursor
+    output        [15:0]  cursor
     );
     
 reg  [15:0] next_cursor_i;
@@ -42,6 +42,18 @@ assign cursor = (aresetn == 1'b0) ?
                         (is_last == 1'b1 || next_cursor_i < 256) ? 
                           next_cursor_i : next_cursor_i - 256
                     );
+                    
+/*always@(*)begin
+    case({aresetn,is_last,next_cursor_i})
+        18'b0?_????_????_????_????:
+            cursor = 0;
+        18'b11_????_????_????_????,18'b10_0000_0000_????_????:
+            cursor = next_cursor_i;
+        default:
+            cursor = next_cursor_i - 256;
+    endcase
+end*/
+        
 
 always@ (posedge aclk) begin
     next_cursor_i <= next_cursor;

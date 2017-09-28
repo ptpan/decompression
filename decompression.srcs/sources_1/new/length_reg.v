@@ -40,7 +40,7 @@ count_one count_one_inst(
     .out(inc)
 );
 
-always@ (posedge aclk or negedge aresetn) begin
+always@ (posedge aclk) begin
     if (aresetn == 1'b0) 
         length_i <= 16'b0;
     else begin

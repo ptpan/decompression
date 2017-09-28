@@ -37,18 +37,20 @@ count_one count_one_inst(
     .out(num_one)
 );
 
-assign recvd_bytes = (tvalid == 1'b1 && tready == 1'b1) ? 
+assign recvd_bytes = (tvalid & tready ) ? 
                         num_one : recvd_bytes_i;
     
-always@ (posedge aclk or negedge aresetn) begin
+always@ (posedge aclk) begin
     if (aresetn == 1'b0) begin
         recvd_bytes_i <= 16'b0;
     end
     else begin
-        if (tvalid == 1'b1 && tready == 1'b1)
-            recvd_bytes_i <= num_one;
-        else
-            recvd_bytes_i <= recvd_bytes_i;
+        case({tvalid,tready})
+            2'b11:
+                recvd_bytes_i <= num_one;
+            default:
+                recvd_bytes_i <= recvd_bytes_i;
+        endcase
     end
 end    
 endmodule

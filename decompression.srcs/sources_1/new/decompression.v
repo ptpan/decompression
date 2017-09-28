@@ -62,7 +62,7 @@ reg         tready_3;
 
 wire aresetn = axis_aresetn & (~done_3);
 
-always@ (posedge axis_aclk or negedge aresetn) begin
+always@ (posedge axis_aclk ) begin
     if (aresetn == 1'b0) begin
         tlast_1 <= 1'b0;
         tdata_1 <= 256'b0;
@@ -71,7 +71,7 @@ always@ (posedge axis_aclk or negedge aresetn) begin
         tready_1 <= 1'b0;
     end
     else begin
-        if (axis_tready == 1'b1 && axis_tvalid == 1'b1) begin
+        if (axis_tready & axis_tvalid) begin
             tlast_1 <= axis_tlast;
             tdata_1 <= axis_tdata;
             tkeep_1 <= axis_tkeep;
@@ -81,7 +81,7 @@ always@ (posedge axis_aclk or negedge aresetn) begin
     end
 end
 
-always@ (posedge axis_aclk or negedge aresetn) begin
+always@ (posedge axis_aclk ) begin
     if (aresetn == 1'b0) begin
         tlast_2 <= 1'b0;
         tdata_2 <= 256'b0;
@@ -90,7 +90,7 @@ always@ (posedge axis_aclk or negedge aresetn) begin
         tready_2 <= 1'b0;
     end
     else begin
-        if (axis_tready == 1'b1 && axis_tvalid == 1'b1) begin    
+        if (axis_tready & axis_tvalid ) begin    
             tlast_2 <= tlast_1;
             tdata_2 <= tdata_1;
             tkeep_2 <= tkeep_1;
@@ -100,7 +100,7 @@ always@ (posedge axis_aclk or negedge aresetn) begin
     end
 end
 
-always@ (posedge axis_aclk or negedge aresetn) begin
+always@ (posedge axis_aclk ) begin
     if (aresetn == 1'b0) begin
         tlast_3 <= 1'b0;
         tdata_3 <= 256'b0;
@@ -109,7 +109,7 @@ always@ (posedge axis_aclk or negedge aresetn) begin
         tready_3 <= 1'b0;
     end
     else begin
-        if (axis_tready == 1'b1 && axis_tvalid == 1'b1) begin    
+        if (axis_tready & axis_tvalid ) begin    
             tlast_3 <= tlast_2;
             tdata_3 <= tdata_2;
             tkeep_3 <= tkeep_2;
@@ -130,7 +130,7 @@ wire            is_last_1;
 reg             is_last_2;
 wire [15:0]     length; // length of received frame, in bytes
 
-always@ (posedge axis_aclk or negedge aresetn) begin
+always@ (posedge axis_aclk ) begin
     if (aresetn == 1'b0)
         is_last_2 <= 1'b0;
     else
@@ -144,15 +144,11 @@ wire [175:0]     concat_high;
 
 assign concat_low_1 = out[255:176];
 assign concat_high = out[175:0];
-assign concat_out = (length <= 128) ? 
-                {concat_high, tdata_3[79:0]} : 
-                {concat_high, concat_low_2};
+assign concat_out[255:80] = concat_high;
+assign concat_out[79:0] = (length <= 128)? tdata_3[79:0] : concat_low_2;
 
-concat_in_reg concat_in_reg_inst(
-    .tdata_1(tdata_1),
-    .tdata_2(tdata_2), 
-    .concat_in(concat_in)
-);
+
+assign concat_in = {tdata_1, tdata_2}; 
 
 wire cursor_aresetn;
 wire recvd_bytes_aresetn = aresetn;
@@ -161,7 +157,7 @@ wire [15:0] recvd_bytes;
 wire done_1;
 reg  done_2, done_3;
 
-always@ (posedge axis_aclk or negedge axis_aresetn) begin
+always@ (posedge axis_aclk ) begin
     if (aresetn == 1'b0) begin
         done_2 <= 1'b0;
         done_3 <= 1'b0;
@@ -210,7 +206,7 @@ cursor_reg cursor_reg_inst(
 );
 
 wire length_aresetn;
-assign length_aresetn = aresetn & (tvalid_3 & tready_3);
+assign length_aresetn = aresetn & tvalid_3 & tready_3;
 length_reg length_reg_inst(
     .aclk(axis_aclk), 
     .aresetn(length_aresetn),
@@ -220,7 +216,7 @@ length_reg length_reg_inst(
     .length(length)
 );
 
-always@ (posedge axis_aclk or negedge aresetn) begin
+always@ (posedge axis_aclk ) begin
     if (aresetn == 1'b0) begin
         concat_low_2 <= 176'b0;
     end
@@ -257,7 +253,7 @@ sr_latch tvalid_latch(
     .out(axis_tvalid_i)
 );
 
-always@ (posedge axis_aclk or negedge axis_aresetn) begin
+always@ (posedge axis_aclk ) begin
     if (aresetn == 1'b0) begin
         axis_tlast_c2s <= 1'b0; 
         axis_tdata_c2s <= 256'b0;
