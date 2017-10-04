@@ -28,18 +28,22 @@ module extract_and_decomp(
     );
     
 wire [15:0]     offset[7:0];
+wire [15:0]     next_cursor_i;
 // wire [15:0]     next_offset[7:0];
 wire [255:0]    extract_out;
+wire [511:0]    offset_data;
 wire [15:0]     bitmap;
 
+assign offset[0] = cursor + 16;
+assign offset_data = concat_in >> offset[0];
 assign bitmap = concat_in[cursor +: 16];
+assign next_cursor = next_cursor_i + offset[0];
+
 
 //------------------------------------
 // generate offset[]
 bitmap_translation bitmap_translation_inst(
     .bitmap(bitmap),
-    .cursor(cursor),
-    .payload_start(offset[0]), 
     .offset0(offset[1]), 
     .offset1(offset[2]), 
     .offset2(offset[3]), 
@@ -47,7 +51,7 @@ bitmap_translation bitmap_translation_inst(
     .offset4(offset[5]), 
     .offset5(offset[6]), 
     .offset6(offset[7]), 
-    .offset7(next_cursor)
+    .offset7(next_cursor_i)
 );
 //assign next_cursor = next_offset[7];
 //assign offset[7] = next_offset[6];
@@ -67,7 +71,8 @@ generate
         extractor ex(
             .bitmap(bitmap[2*ex_dc_i +: 2]), 
             .offset(offset[ex_dc_i]),
-            .data_in(concat_in), 
+            .data_in(offset_data),
+//            .data_in(concat_in), 
 //            .next_offset(next_offset[ex_dc_i]), 
             .extract_out(extract_out[32*ex_dc_i +: 32])
         );

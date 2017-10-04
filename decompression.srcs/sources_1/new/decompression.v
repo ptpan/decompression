@@ -189,9 +189,15 @@ done_reg done_reg_inst(
 );
 
 assign reset_is_last = (~axis_aresetn) || done_3;
-sr_latch is_last_latch(
-    .set(tlast_1), 
+//sr_latch is_last_latch(
+//    .set(tlast_1), 
+//    .reset(reset_is_last), 
+//    .out(is_last_1)
+//);
+set_reset_reg is_last_reg_inst(
+    .aclk(axis_aclk),
     .reset(reset_is_last), 
+    .set(tlast_1), 
     .out(is_last_1)
 );
 
@@ -247,10 +253,16 @@ wire [31:0]  axis_tkeep_i = (done_2 == 1'b1) ? 32'h3FF : 32'hFFFF_FFFF;
 wire         axis_tlast_i = done_2;
 
 wire reset_tvalid = (~axis_aresetn) || done_3;
-sr_latch tvalid_latch(
-    .set(tvalid_3), 
+//sr_latch tvalid_latch(
+//    .set(tvalid_3), 
+//    .reset(reset_tvalid), 
+//    .out(axis_tvalid_i)
+//);
+set_reset_reg tvalid_reg_inst(
+    .aclk(axis_aclk),
     .reset(reset_tvalid), 
-    .out(axis_tvalid_i)
+    .set(tvalid_3), 
+    .out(axis_tvalid_i) 
 );
 
 always@ (posedge axis_aclk ) begin

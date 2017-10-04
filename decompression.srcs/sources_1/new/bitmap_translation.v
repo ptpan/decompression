@@ -20,11 +20,9 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module bitmap_translation(bitmap, cursor, payload_start, offset0, offset1, offset2, offset3, offset4, offset5, offset6, offset7);
+module bitmap_translation(bitmap, offset0, offset1, offset2, offset3, offset4, offset5, offset6, offset7);
 
 input [15:0] bitmap;
-input [15:0] cursor;
-output  [15:0] payload_start;
 output  [15:0] offset0;
 output  [15:0] offset1;
 output  [15:0] offset2;
@@ -35,11 +33,6 @@ output  [15:0] offset6;
 output  [15:0] offset7;
 
 reg [5:0] bitmap_map [7:0];
-
-assign payload_start = cursor + 16;
-
-//assign bitmap_map[0] = 
-
 
 always@ (bitmap[1:0]) begin
     
@@ -172,14 +165,22 @@ always@ (*) begin
 end
 
 
-assign offset0 = payload_start + bitmap_map[0];
-assign offset1 = payload_start + (bitmap_map[0]+bitmap_map[1]);
-assign offset2 = (payload_start + bitmap_map[0])+(bitmap_map[1]+bitmap_map[2]);
-assign offset3 = payload_start + ((bitmap_map[0]+bitmap_map[1])+(bitmap_map[2]+bitmap_map[3]));
-assign offset4 = (payload_start + bitmap_map[0])+((bitmap_map[1]+bitmap_map[2])+(bitmap_map[3]+bitmap_map[4]));
-assign offset5 = (payload_start + (bitmap_map[0]+bitmap_map[1]))+((bitmap_map[2]+bitmap_map[3])+(bitmap_map[4]+bitmap_map[5]));
-assign offset6 = ((payload_start + bitmap_map[0])+(bitmap_map[1]+bitmap_map[2]))+((bitmap_map[3]+bitmap_map[4])+(bitmap_map[5]+bitmap_map[6]));
-assign offset7 = payload_start + ((bitmap_map[0]+bitmap_map[1])+(bitmap_map[2]+bitmap_map[3]))+((bitmap_map[4]+bitmap_map[5])+(bitmap_map[6]+bitmap_map[7]));
+assign offset0 = bitmap_map[0];
+assign offset1 = (bitmap_map[0]+bitmap_map[1]);
+assign offset2 = (bitmap_map[0])+(bitmap_map[1]+bitmap_map[2]);
+assign offset3 = ((bitmap_map[0]+bitmap_map[1])+(bitmap_map[2]+bitmap_map[3]));
+assign offset4 = (bitmap_map[0])+((bitmap_map[1]+bitmap_map[2])+(bitmap_map[3]+bitmap_map[4]));
+assign offset5 = ((bitmap_map[0]+bitmap_map[1]))+((bitmap_map[2]+bitmap_map[3])+(bitmap_map[4]+bitmap_map[5]));
+assign offset6 = ((bitmap_map[0])+(bitmap_map[1]+bitmap_map[2]))+((bitmap_map[3]+bitmap_map[4])+(bitmap_map[5]+bitmap_map[6]));
+assign offset7 = ((bitmap_map[0]+bitmap_map[1])+(bitmap_map[2]+bitmap_map[3]))+((bitmap_map[4]+bitmap_map[5])+(bitmap_map[6]+bitmap_map[7]));
 
+//assign offset0 = payload_start + bitmap_map[0];
+//assign offset1 = payload_start + (bitmap_map[0]+bitmap_map[1]);
+//assign offset2 = (payload_start + bitmap_map[0])+(bitmap_map[1]+bitmap_map[2]);
+//assign offset3 = payload_start + ((bitmap_map[0]+bitmap_map[1])+(bitmap_map[2]+bitmap_map[3]));
+//assign offset4 = (payload_start + bitmap_map[0])+((bitmap_map[1]+bitmap_map[2])+(bitmap_map[3]+bitmap_map[4]));
+//assign offset5 = (payload_start + (bitmap_map[0]+bitmap_map[1]))+((bitmap_map[2]+bitmap_map[3])+(bitmap_map[4]+bitmap_map[5]));
+//assign offset6 = ((payload_start + bitmap_map[0])+(bitmap_map[1]+bitmap_map[2]))+((bitmap_map[3]+bitmap_map[4])+(bitmap_map[5]+bitmap_map[6]));
+//assign offset7 = payload_start + ((bitmap_map[0]+bitmap_map[1])+(bitmap_map[2]+bitmap_map[3]))+((bitmap_map[4]+bitmap_map[5])+(bitmap_map[6]+bitmap_map[7]));
 
 endmodule
