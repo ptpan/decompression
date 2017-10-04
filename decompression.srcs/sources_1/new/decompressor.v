@@ -1,7 +1,8 @@
 module decompressor(
     input       [1:0]        bitmap,
     input       [31:0]       in,
-    output reg  [31:0]       out
+//    output reg  [31:0]       out
+    output      [31:0]       out    
 );
 
 wire [15:0] din;
@@ -39,20 +40,19 @@ assign mantissa = {din[14:0] << total_sum, 8'b0};
 
 assign dout = {din[15], exp, mantissa};
 
+assign out = (bitmap == 2'b00 || bitmap == 2'b01) ? 32'b0 : 
+             ( (bitmap == 2'b10) ? dout : in
+             );
+//always@(*) begin
 
-// pure combinatorial logic
-
-
-always@(*) begin
-
-    case(bitmap)
-        2'b00,2'b01:
-            out = 0;
-        2'b10:
-            out = dout;
-        2'b11:
-            out = in;
-    endcase
-end
+//    case(bitmap)
+//        2'b00,2'b01:
+//            out = 0;
+//        2'b10:
+//            out = dout;
+//        2'b11:
+//            out = in;
+//    endcase
+//end
 
 endmodule
