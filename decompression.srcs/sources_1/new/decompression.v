@@ -179,14 +179,15 @@ recvd_bytes recvd_bytes_inst(
 
 wire done_aresetn = ~done_2;
 
-done_reg done_reg_inst(
+/*done_reg done_reg_inst(
     .aclk(axis_aclk), 
     .aresetn(done_aresetn), 
     .is_last(is_last_1), 
     .next_cursor(next_cursor), 
     .recvd_bytes(recvd_bytes), 
     .done(done_1)
-);
+);*/
+assign done_1 = (is_last_1 == 1'b1) & (next_cursor == (recvd_bytes << 3 ) + 256);   
 
 assign reset_is_last = (~axis_aresetn) || done_3;
 //sr_latch is_last_latch(

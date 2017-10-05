@@ -1,120 +1,21 @@
 #-----------------------------------------------------------
-# Vivado v2014.3.1 (64-bit)
-# SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
-# IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
-# Start of session at: Wed Sep 27 04:24:41 2017
-# Process ID: 26723
-# Log file: /home/ppan/vivado.log
-# Journal file: /home/ppan/vivado.jou
+# Vivado v2017.2.1 (64-bit)
+# SW Build 1957588 on Wed Aug  9 16:32:10 MDT 2017
+# IP Build 1948039 on Wed Aug  9 18:19:28 MDT 2017
+# Start of session at: Wed Oct  4 21:19:59 2017
+# Process ID: 26208
+# Current directory: /home/yifany3/git_decomp/decompression
+# Command line: vivado ./decompression.xpr
+# Log file: /home/yifany3/git_decomp/decompression/vivado.log
+# Journal file: /home/yifany3/git_decomp/decompression/vivado.jou
 #-----------------------------------------------------------
 start_gui
-open_project /home/ppan/summer_intern/decompression/decompression.xpr
+open_project ./decompression.xpr
 update_compile_order -fileset sources_1
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-restart
-run 0.5 us
-save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-restart
-run 0.5 us
-close [ open /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/done_reg.v w ]
-add_files /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/done_reg.v
+add_files -norecurse /home/yifany3/git_decomp/decompression/decompression.srcs/sources_1/new/set_reset_reg.v
+update_compile_order -fileset sources_1
+add_files -norecurse /home/yifany3/git_decomp/decompression/decompression.srcs/sources_1/new/bitmap_translation.v
 update_compile_order -fileset sources_1
 update_compile_order -fileset sources_1
-update_compile_order -fileset sources_1
-save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-restart
-run 0.5 us
-save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-restart
-run 0.5 us
-save_wave_config {/home/ppan/summer_intern/decompression/tb_behav.wcfg}
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-close_sim
-launch_simulation
-open_wave_config /home/ppan/summer_intern/decompression/tb_behav.wcfg
-source tb.tcl
-archive_project /home/ppan/summer_intern/decompression.xpr.zip -force
+remove_files  {/home/yifany3/git_decomp/decompression/decompression.srcs/sources_1/new/length_decoder.v /home/yifany3/git_decomp/decompression/decompression.srcs/sources_1/new/concat_in_reg.v /home/yifany3/git_decomp/decompression/decompression.srcs/sources_1/new/done_reg.v /home/yifany3/git_decomp/decompression/decompression.srcs/sources_1/new/sr_latch.v}
+remove_files  /home/yifany3/git_decomp/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v
