@@ -55,8 +55,10 @@ ex_and_decomp e_a_d_inst(concat_data_ex,cursor_ex,is_header_ex,need_decomp_ex,da
 pip_5 pip_5_inst(axis_aclk,axis_aresetn,axis_tvalid,entire_ready,
                     data_out_decomp,is_header_ex,need_decomp_ex,is_payload_1_decomp
                     data_out_final,is_header_final,need_decomp_final,is_payload_1_final);
+    
+pip_6 pip_6_inst();
 
-final_concat f_c_inst(data_out_final,data_out_decomp,is_header_final,need_decomp_final,is_payload_1_final, result);
+    final_concat f_c_inst(data_out_final,data_out_5,is_header_final,need_decomp_final,is_payload_1_final, result);
 
 
 
