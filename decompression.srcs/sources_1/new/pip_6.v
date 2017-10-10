@@ -49,97 +49,97 @@ assign concat_out[79:0] = (length <= 128)? tdata_3[79:0] : concat_low_2;
 
 wire [255:0] extract_out;
 // ex_decomp 0
-extractor ex(
+extractor ex0(
     .bitmap(bitmap[1:0]), 
     .offset(offset[15:0]),
     .data_in(offset_data),
     .extract_out(extract_out[31:0])
 );
-decompressor decomp(
+decompressor decomp0(
     .bitmap(bitmap[1:0]), 
     .in(extract_out[31:0]), 
     .out(out[31:0])
 );
 // ex_decomp 1
-extractor ex(
+extractor ex1(
     .bitmap(bitmap[3:2]), 
     .offset(offset[31:16]),
     .data_in(offset_data),
     .extract_out(extract_out[63:32])
 );
-decompressor decomp(
+decompressor decomp1(
     .bitmap(bitmap[3:2]), 
     .in(extract_out[63:32]), 
     .out(out[63:32])
 );
 // ex_decomp 2
-extractor ex(
+extractor ex2(
     .bitmap(bitmap[5:4]), 
     .offset(offset[47:32]),
     .data_in(offset_data),
     .extract_out(extract_out[95:64])
 );
-decompressor decomp(
+decompressor decomp2(
     .bitmap(bitmap[5:4]), 
     .in(extract_out[95:64]), 
     .out(out[95:64])
 );
 // ex_decomp 3
-extractor ex(
+extractor ex3(
     .bitmap(bitmap[7:6]), 
     .offset(offset[63:48]),
     .data_in(offset_data),
     .extract_out(extract_out[127:96])
 );
-decompressor decomp(
+decompressor decomp3(
     .bitmap(bitmap[7:6]), 
     .in(extract_out[127:96]), 
     .out(out[127:96])
 );
 // ex_decomp 4
-extractor ex(
+extractor ex4(
     .bitmap(bitmap[9:8]), 
     .offset(offset[79:64]),
     .data_in(offset_data),
     .extract_out(extract_out[159:128])
 );
-decompressor decomp(
+decompressor decomp4(
     .bitmap(bitmap[9:8]), 
     .in(extract_out[159:128]), 
     .out(out[159:128])
 );
 // ex_decomp 5
-extractor ex(
+extractor ex5(
     .bitmap(bitmap[11:10]), 
     .offset(offset[95:80]),
     .data_in(offset_data),
     .extract_out(extract_out[191:160])
 );
-decompressor decomp(
+decompressor decomp5(
     .bitmap(bitmap[11:10]), 
     .in(extract_out[191:160]), 
     .out(out[191:160])
 );
 // ex_decomp 6
-extractor ex(
+extractor ex6(
     .bitmap(bitmap[13:12]), 
     .offset(offset[111:96]),
     .data_in(offset_data),
     .extract_out(extract_out[223:192])
 );
-decompressor decomp(
+decompressor decomp6(
     .bitmap(bitmap[13:12]), 
     .in(extract_out[223:192]), 
     .out(out[223:192])
 );
 // ex_decomp 7
-extractor ex(
+extractor ex7(
     .bitmap(bitmap[15:14]), 
     .offset(offset[127:112]),
     .data_in(offset_data),
     .extract_out(extract_out[255:224])
 );
-decompressor decomp(
+decompressor decomp7(
     .bitmap(bitmap[15:14]), 
     .in(extract_out[255:224]), 
     .out(out[255:224])
