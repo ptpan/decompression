@@ -2,9 +2,10 @@
 *** Running vivado
     with args -log decompression.vds -m64 -mode batch -messageDb vivado.pb -source decompression.tcl
 
+INFO: [Common 17-701] A license check has taken more than 10 seconds to complete. This may indicate that there is a performance issue with one or more license servers listed in XILINXD_LICENSE_FILE or LM_LICENSE_FILE, or that the license servers are just not responding at all. Try setting the FLEXLM_DIAGNOSTICS environment variable to 3 and running Vivado again to get more information.
 
 ****** Vivado v2014.3.1 (64-bit)
-  **** SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+  **** SW Build 1056140 on Thu Oct 30 17:07:39 MDT 2014
   **** IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
     ** Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 
@@ -16,18 +17,26 @@ source decompression.tcl
 # create_project -in_memory -part xc7vx690tffg1761-2
 # set_param project.compositeFile.enableAutoGeneration 0
 # set_param synth.vivado.isSynthRun true
-# set_property webtalk.parent_dir /home/ppan/summer_intern/decompression/decompression.cache/wt [current_project]
-# set_property parent.project_path /home/ppan/summer_intern/decompression/decompression.xpr [current_project]
+# set_property webtalk.parent_dir C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.cache/wt [current_project]
+# set_property parent.project_path C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.xpr [current_project]
 # set_property default_lib xil_defaultlib [current_project]
 # set_property target_language Verilog [current_project]
 # set_property board_part xilinx.com:vc709:part0:1.4 [current_project]
 # read_verilog -library xil_defaultlib {
-#   /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v
-#   /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v
-#   /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v
-#   /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v
-#   /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v
-#   /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/count_one.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/done_reg.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/extractor.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/decompressor.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/bitmap_translation.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/set_reset_reg.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/length_reg.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_6.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_5.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_4.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_3.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_2.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_1.v
+#   C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_top.v
 # }
 # catch { write_hwdef -file decompression.hwdef }
 INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is no block diagram instance in the design
@@ -35,419 +44,14 @@ INFO: [Vivado_Tcl 4-279] hardware handoff file cannot be generated as there is n
 Command: synth_design -top decompression -part xc7vx690tffg1761-2
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7vx690t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7vx690t'
----------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 872.520 ; gain = 142.293 ; free physical = 1452 ; free virtual = 6521
----------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'decompression' [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:1]
-INFO: [Synth 8-638] synthesizing module 'length_decoder' [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v:23]
-INFO: [Synth 8-638] synthesizing module 'bitmap_to_num' [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:23]
-INFO: [Synth 8-256] done synthesizing module 'bitmap_to_num' (1#1) [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v:23]
-INFO: [Synth 8-256] done synthesizing module 'length_decoder' (2#1) [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v:23]
-INFO: [Synth 8-638] synthesizing module 'count_one' [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v:23]
-INFO: [Synth 8-256] done synthesizing module 'count_one' (3#1) [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v:23]
-INFO: [Synth 8-638] synthesizing module 'extractor' [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:23]
-INFO: [Synth 8-256] done synthesizing module 'extractor' (4#1) [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v:23]
-INFO: [Synth 8-638] synthesizing module 'decompressor' [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:1]
-WARNING: [Synth 8-567] referenced signal 'dout' should be on the sensitivity list [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:44]
-INFO: [Synth 8-256] done synthesizing module 'decompressor' (5#1) [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v:1]
-INFO: [Synth 8-256] done synthesizing module 'decompression' (6#1) [/home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v:1]
-WARNING: [Synth 8-3331] design decompression has unconnected port axis_tready_c2s
----------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 908.754 ; gain = 178.527 ; free physical = 1410 ; free virtual = 6485
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 908.754 ; gain = 178.527 ; free physical = 1410 ; free virtual = 6485
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Loading Part and Timing Information
----------------------------------------------------------------------------------
-Loading part: xc7vx690tffg1761-2
----------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 916.758 ; gain = 186.531 ; free physical = 1410 ; free virtual = 6485
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:07 . Memory (MB): peak = 1076.711 ; gain = 346.484 ; free physical = 1171 ; free virtual = 6327
----------------------------------------------------------------------------------
+WARNING: [Common 17-348] Failed to get the license for feature 'Synthesis' and/or device 'xc7vx690t'
+0 Infos, 1 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+ERROR: [Common 17-345] A valid license was not found for feature 'Synthesis' and/or device 'xc7vx690t'. Please run the Vivado License Manager for assistance in determining
+which features and devices are licensed for your system.
+Resolution: Check the status of your licenses in the Vivado License Manager. For debug help search Xilinx Support for "Licensing FAQ". 
 
-Report RTL Partitions: 
-+------+-------------------+------------+----------+
-|      |RTL Partition      |Replication |Instances |
-+------+-------------------+------------+----------+
-|1     |extractor__GBM0    |           1|     24480|
-|2     |extractor__GBM1    |           1|     12502|
-|3     |extractor__GBM2    |           1|     12240|
-|4     |decompression__GC0 |           1|     16298|
-+------+-------------------+------------+----------+
-No constraint files found.
----------------------------------------------------------------------------------
-Start RTL Component Statistics 
----------------------------------------------------------------------------------
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-	   2 Input     10 Bit       Adders := 8     
-	   3 Input     10 Bit       Adders := 1     
-	   8 Input      9 Bit       Adders := 1     
-	  32 Input      7 Bit       Adders := 1     
-	  15 Input      6 Bit       Adders := 8     
-+---Registers : 
-	              256 Bit    Registers := 4     
-	              176 Bit    Registers := 2     
-	               80 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	               16 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
-+---Muxes : 
-	   2 Input    256 Bit        Muxes := 2     
-	   2 Input    176 Bit        Muxes := 1     
-	   4 Input     32 Bit        Muxes := 24    
-	   2 Input     32 Bit        Muxes := 4     
-	   4 Input     16 Bit        Muxes := 8     
-	   2 Input     16 Bit        Muxes := 1     
-	   4 Input      6 Bit        Muxes := 8     
-	   4 Input      3 Bit        Muxes := 8     
-	   4 Input      2 Bit        Muxes := 8     
-	   2 Input      1 Bit        Muxes := 2     
----------------------------------------------------------------------------------
-Finished RTL Component Statistics 
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RTL Hierarchical Component Statistics 
----------------------------------------------------------------------------------
-Hierarchical RTL Component report 
-Module decompression 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     32 Bit       Adders := 1     
-	   3 Input     10 Bit       Adders := 1     
-+---Registers : 
-	              256 Bit    Registers := 4     
-	              176 Bit    Registers := 2     
-	               80 Bit    Registers := 1     
-	               32 Bit    Registers := 4     
-	               16 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
-+---Muxes : 
-	   2 Input    256 Bit        Muxes := 2     
-	   2 Input    176 Bit        Muxes := 1     
-	   2 Input     32 Bit        Muxes := 4     
-	   2 Input     16 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
-Module extractor 
-Detailed RTL Component Info : 
-+---Adders : 
-	   2 Input     10 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 2     
-	   4 Input     16 Bit        Muxes := 1     
-	   4 Input      6 Bit        Muxes := 1     
-	   4 Input      3 Bit        Muxes := 1     
-Module bitmap_to_num__1 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module bitmap_to_num__2 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module bitmap_to_num__3 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module bitmap_to_num__4 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module bitmap_to_num__5 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module bitmap_to_num__6 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module bitmap_to_num__7 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module bitmap_to_num 
-Detailed RTL Component Info : 
-+---Muxes : 
-	   4 Input      2 Bit        Muxes := 1     
-Module length_decoder 
-Detailed RTL Component Info : 
-+---Adders : 
-	   8 Input      9 Bit       Adders := 1     
-Module count_one 
-Detailed RTL Component Info : 
-+---Adders : 
-	  32 Input      7 Bit       Adders := 1     
-Module decompressor__1 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-Module decompressor__2 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-Module decompressor__3 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-Module decompressor__4 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-Module decompressor__5 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-Module decompressor__6 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-Module decompressor__7 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
-Module decompressor 
-Detailed RTL Component Info : 
-+---Adders : 
-	  15 Input      6 Bit       Adders := 1     
-+---Muxes : 
-	   4 Input     32 Bit        Muxes := 1     
----------------------------------------------------------------------------------
-Finished RTL Hierarchical Component Statistics
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Part Resource Summary
----------------------------------------------------------------------------------
-Loading clock regions from /home/ppan/Vivado/Vivado/2014.3.1/data/parts/xilinx/virtex7/virtex7/xc7vx690t/ClockRegion.xml
-Loading clock buffers from /home/ppan/Vivado/Vivado/2014.3.1/data/parts/xilinx/virtex7/virtex7/xc7vx690t/ClockBuffers.xml
-Loading clock placement rules from /home/ppan/Vivado/Vivado/2014.3.1/data/parts/xilinx/virtex7/ClockPlacerRules.xml
-Loading package pin functions from /home/ppan/Vivado/Vivado/2014.3.1/data/parts/xilinx/virtex7/PinFunctions.xml...
-Loading package from /home/ppan/Vivado/Vivado/2014.3.1/data/parts/xilinx/virtex7/virtex7/xc7vx690t/ffg1761/Package.xml
-Loading io standards from /home/ppan/Vivado/Vivado/2014.3.1/data/./parts/xilinx/virtex7/IOStandards.xml
-Loading device configuration modes from /home/ppan/Vivado/Vivado/2014.3.1/data/parts/xilinx/virtex7/ConfigModes.xml
-Part Resources:
-DSPs: 3600 (col length:200)
-BRAMs: 2940 (col length: RAMB18 200 RAMB36 100)
----------------------------------------------------------------------------------
-Finished Part Resource Summary
----------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 1210.320 ; gain = 480.094 ; free physical = 1036 ; free virtual = 6198
----------------------------------------------------------------------------------
-Start Cross Boundary Optimization
----------------------------------------------------------------------------------
-WARNING: [Synth 8-3331] design decompression has unconnected port axis_tready_c2s
----------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 1210.320 ; gain = 480.094 ; free physical = 1037 ; free virtual = 6196
----------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 1210.320 ; gain = 480.094 ; free physical = 1037 ; free virtual = 6196
-
-Report RTL Partitions: 
-+------+-------------------+------------+----------+
-|      |RTL Partition      |Replication |Instances |
-+------+-------------------+------------+----------+
-|1     |extractor__GBM0    |           8|     24672|
-|2     |extractor__GBM1    |           8|     12724|
-|3     |extractor__GBM2    |           8|     12336|
-|4     |decompression__GC0 |           1|     17570|
-+------+-------------------+------------+----------+
----------------------------------------------------------------------------------
-Start RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Start Area Optimization
----------------------------------------------------------------------------------
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_838/\byte_cnt_reg[0] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_838/\byte_cnt_reg[1] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_838/\byte_cnt_reg[2] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_838/\byte_cnt_reg[3] )
-INFO: [Synth 8-3333] propagating constant 0 across sequential element (i_838/\byte_cnt_reg[4] )
----------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:04 . Memory (MB): peak = 1293.570 ; gain = 563.344 ; free physical = 948 ; free virtual = 6110
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:04 . Memory (MB): peak = 1293.570 ; gain = 563.344 ; free physical = 948 ; free virtual = 6110
----------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:01:05 ; elapsed = 00:01:04 . Memory (MB): peak = 1293.570 ; gain = 563.344 ; free physical = 948 ; free virtual = 6110
-
-Report RTL Partitions: 
-+------+-------------------+------------+----------+
-|      |RTL Partition      |Replication |Instances |
-+------+-------------------+------------+----------+
-|1     |extractor__GBM0    |           7|       779|
-|2     |extractor__GBM1    |           1|      1004|
-|3     |extractor__GBM2    |           7|       656|
-|4     |decompression__GC0 |           1|      7412|
-|5     |extractor__GBM1__1 |           1|        90|
-|6     |extractor__GBM1__2 |           6|      1295|
-+------+-------------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:01:05 ; elapsed = 00:01:04 . Memory (MB): peak = 1293.570 ; gain = 563.344 ; free physical = 948 ; free virtual = 6110
----------------------------------------------------------------------------------
-Start Timing Optimization
----------------------------------------------------------------------------------
-No constraint files found.
----------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:05 ; elapsed = 00:01:04 . Memory (MB): peak = 1293.570 ; gain = 563.344 ; free physical = 948 ; free virtual = 6110
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+------+-------------------+------------+----------+
-|      |RTL Partition      |Replication |Instances |
-+------+-------------------+------------+----------+
-|1     |extractor__GBM0    |           7|       779|
-|2     |extractor__GBM1    |           1|      1004|
-|3     |extractor__GBM2    |           7|       656|
-|4     |decompression__GC0 |           1|      7412|
-|5     |extractor__GBM1__1 |           1|        90|
-|6     |extractor__GBM1__2 |           6|      1295|
-+------+-------------------+------------+----------+
----------------------------------------------------------------------------------
-Start Technology Mapping
----------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (\cursor_reg[1] ) is unused and will be removed from module decompression.
-WARNING: [Synth 8-3332] Sequential element (\cursor_reg[0] ) is unused and will be removed from module decompression.
-WARNING: [Synth 8-3332] Sequential element (\axis_tkeep_c2s_reg[31] ) is unused and will be removed from module decompression.
----------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:07 ; elapsed = 00:01:06 . Memory (MB): peak = 1301.578 ; gain = 571.352 ; free physical = 939 ; free virtual = 6101
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Flattening Before IO Insertion
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Final Netlist Cleanup
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:07 ; elapsed = 00:01:07 . Memory (MB): peak = 1301.578 ; gain = 571.352 ; free physical = 940 ; free virtual = 6101
----------------------------------------------------------------------------------
-
-Report Check Netlist: 
-+------+------------------+-------+---------+-------+------------------+
-|      |Item              |Errors |Warnings |Status |Description       |
-+------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
-+------+------------------+-------+---------+-------+------------------+
----------------------------------------------------------------------------------
-Start Renaming Generated Instances
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:07 ; elapsed = 00:01:07 . Memory (MB): peak = 1301.578 ; gain = 571.352 ; free physical = 940 ; free virtual = 6101
----------------------------------------------------------------------------------
-
-Report RTL Partitions: 
-+-+--------------+------------+----------+
-| |RTL Partition |Replication |Instances |
-+-+--------------+------------+----------+
-+-+--------------+------------+----------+
----------------------------------------------------------------------------------
-Start Rebuilding User Hierarchy
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:07 ; elapsed = 00:01:07 . Memory (MB): peak = 1301.578 ; gain = 571.352 ; free physical = 940 ; free virtual = 6102
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Finished RAM, DSP and Shift Register Reporting
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
-Start Writing Synthesis Report
----------------------------------------------------------------------------------
-
-Report BlackBoxes: 
-+-+--------------+----------+
-| |BlackBox name |Instances |
-+-+--------------+----------+
-+-+--------------+----------+
-
-Report Cell Usage: 
-+------+--------+------+
-|      |Cell    |Count |
-+------+--------+------+
-|1     |BUFG    |     1|
-|2     |CARRY4  |    29|
-|3     |LUT1    |    49|
-|4     |LUT2    |   177|
-|5     |LUT3    |   820|
-|6     |LUT4    |   224|
-|7     |LUT5    |   638|
-|8     |LUT6    |  2144|
-|9     |MUXCY_L |    26|
-|10    |MUXF7   |   176|
-|11    |MUXF8   |     8|
-|12    |XORCY   |    27|
-|13    |FDCE    |   853|
-|14    |FDRE    |   715|
-|15    |IBUF    |   292|
-|16    |OBUF    |   291|
-+------+--------+------+
-
-Report Instance Areas: 
-+------+---------+-------+------+
-|      |Instance |Module |Cells |
-+------+---------+-------+------+
-|1     |top      |       |  6470|
-+------+---------+-------+------+
----------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:07 ; elapsed = 00:01:07 . Memory (MB): peak = 1301.578 ; gain = 571.352 ; free physical = 939 ; free virtual = 6102
----------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:06 ; elapsed = 00:01:06 . Memory (MB): peak = 1301.578 ; gain = 479.059 ; free physical = 939 ; free virtual = 6102
-Synthesis Optimization Complete : Time (s): cpu = 00:01:07 ; elapsed = 00:01:07 . Memory (MB): peak = 1301.578 ; gain = 571.352 ; free physical = 939 ; free virtual = 6102
-INFO: [Project 1-571] Translating synthesized netlist
-INFO: [Netlist 29-17] Analyzing 374 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'decompression' is not ideal for floorplanning, since the cellview 'decompression' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
-INFO: [Project 1-570] Preparing netlist for logic optimization
-INFO: [Opt 31-140] Inserted 0 IBUFs to IO ports without IO buffers.
-INFO: [Opt 31-141] Inserted 0 OBUFs to IO ports without IO buffers.
-INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 7 instances were transformed.
-  (MUXCY,XORCY) => CARRY4: 7 instances
-
-INFO: [Common 17-83] Releasing license: Synthesis
-27 Infos, 7 Warnings, 0 Critical Warnings and 0 Errors encountered.
-synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:08 . Memory (MB): peak = 1325.578 ; gain = 504.059 ; free physical = 893 ; free virtual = 6076
-# write_checkpoint decompression.dcp
-# catch { report_utilization -file decompression_utilization_synth.rpt -pb decompression_utilization_synth.pb }
-report_utilization: Time (s): cpu = 00:00:00.15 ; elapsed = 00:00:00.18 . Memory (MB): peak = 1341.586 ; gain = 0.000 ; free physical = 892 ; free virtual = 6074
-INFO: [Common 17-206] Exiting Vivado at Sat Sep 23 03:44:08 2017...
+    while executing
+"synth_design -top decompression -part xc7vx690tffg1761-2"
+    (file "decompression.tcl" line 35)
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 11 02:03:07 2017...

@@ -10,18 +10,26 @@ set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7vx690tffg1761-2
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir /home/ppan/summer_intern/decompression/decompression.cache/wt [current_project]
-set_property parent.project_path /home/ppan/summer_intern/decompression/decompression.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.cache/wt [current_project]
+set_property parent.project_path C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property board_part xilinx.com:vc709:part0:1.4 [current_project]
 read_verilog -library xil_defaultlib {
-  /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/bitmap_to_num.v
-  /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/count_one.v
-  /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/length_decoder.v
-  /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/extractor.v
-  /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompressor.v
-  /home/ppan/summer_intern/decompression/decompression.srcs/sources_1/new/decompression_top.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/count_one.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/done_reg.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/extractor.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/decompressor.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/bitmap_translation.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/set_reset_reg.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/length_reg.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_6.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_5.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_4.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_3.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_2.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_1.v
+  C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.srcs/sources_1/new/pip_top.v
 }
 catch { write_hwdef -file decompression.hwdef }
 synth_design -top decompression -part xc7vx690tffg1761-2

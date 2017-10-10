@@ -6,17 +6,21 @@
 # Copyright 1986-2014 Xilinx, Inc. All Rights Reserved.
 # 
 
+echo "This script was generated under a different operating system."
+echo "Please update the PATH and LD_LIBRARY_PATH variables below, before executing this script"
+exit
+
 if [ -z "$PATH" ]; then
-  PATH=/home/ppan/Vivado/Vivado/2014.3.1/ids_lite/ISE/bin/lin64:/home/ppan/Vivado/Vivado/2014.3.1/bin
+  PATH=D:/Xilinx/Vivado/2014.3.1/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2014.3.1/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2014.3.1/bin
 else
-  PATH=/home/ppan/Vivado/Vivado/2014.3.1/ids_lite/ISE/bin/lin64:/home/ppan/Vivado/Vivado/2014.3.1/bin:$PATH
+  PATH=D:/Xilinx/Vivado/2014.3.1/ids_lite/ISE/bin/nt64;D:/Xilinx/Vivado/2014.3.1/ids_lite/ISE/lib/nt64:D:/Xilinx/Vivado/2014.3.1/bin:$PATH
 fi
 export PATH
 
 if [ -z "$LD_LIBRARY_PATH" ]; then
-  LD_LIBRARY_PATH=/home/ppan/Vivado/Vivado/2014.3.1/ids_lite/ISE/lib/lin64
+  LD_LIBRARY_PATH=
 else
-  LD_LIBRARY_PATH=/home/ppan/Vivado/Vivado/2014.3.1/ids_lite/ISE/lib/lin64:$LD_LIBRARY_PATH
+  LD_LIBRARY_PATH=:$LD_LIBRARY_PATH
 fi
 export LD_LIBRARY_PATH
 

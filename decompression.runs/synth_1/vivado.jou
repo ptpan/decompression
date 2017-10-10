@@ -1,10 +1,10 @@
 #-----------------------------------------------------------
 # Vivado v2014.3.1 (64-bit)
-# SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+# SW Build 1056140 on Thu Oct 30 17:07:39 MDT 2014
 # IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
-# Start of session at: Sat Sep 23 03:42:55 2017
-# Process ID: 8780
-# Log file: /home/ppan/summer_intern/decompression/decompression.runs/synth_1/decompression.vds
-# Journal file: /home/ppan/summer_intern/decompression/decompression.runs/synth_1/vivado.jou
+# Start of session at: Wed Oct 11 02:02:04 2017
+# Process ID: 2380
+# Log file: C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.runs/synth_1/decompression.vds
+# Journal file: C:/Users/Peitian/Desktop/Compression/decompression.xpr/decompression/decompression/decompression.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source decompression.tcl
