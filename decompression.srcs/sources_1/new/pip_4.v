@@ -23,6 +23,9 @@ module pip_4(
     input aclk, 
     input aresetn, 
     
+    input [255:0] tdata_1, 
+    input [255:0] tdata_2,
+    
     input [31:0] tkeep, 
     input tvalid,
     input tready,

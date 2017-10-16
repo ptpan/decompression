@@ -27,18 +27,22 @@ module pip_5(
     input [15:0] recvd_bytes, 
     input cursor_aresetn,
     input final_done,
+    input [15:0] length,
     
     input [511:0] concat_in, 
     
     output [15:0] bitmap,
     output [127:0] offset, // should be: wire [15:0] offset [7:0];
     output [511:0] offset_data, 
+    output axis_tready,
     output done
     );
 
 wire [15:0] offset_i [7:0];
 wire [15:0] cursor, next_cursor, offset7_out;
 reg [15:0] next_cursor_i;
+
+assign axis_tready = (length <= 96) || (next_cursor >= 256);
 
 // cursor_reg module has been merged into this pipeline
 assign cursor = (cursor_aresetn == 1'b0) ?
