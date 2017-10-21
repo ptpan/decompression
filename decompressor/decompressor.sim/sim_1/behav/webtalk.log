@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Webtalk v2014.3.1 (64-bit)
+# SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+# IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+# Start of session at: Sat Oct 21 22:04:42 2017
+# Process ID: 5270
+# Log file: /home/ppan/decompressor/decompressor.sim/sim_1/behav/webtalk.log
+# Journal file: /home/ppan/decompressor/decompressor.sim/sim_1/behav/webtalk.jou
+#-----------------------------------------------------------
+source /home/ppan/decompressor/decompressor.sim/sim_1/behav/xsim.dir/decompressor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+
+    while executing
+"webtalk_transmit -clientid 666598132 -regid "" -xml /home/ppan/decompressor/decompressor.sim/sim_1/behav/xsim.dir/decompressor_tb_behav/webtalk/usage_..."
+    (file "/home/ppan/decompressor/decompressor.sim/sim_1/behav/xsim.dir/decompressor_tb_behav/webtalk/xsim_webtalk.tcl" line 32)
+INFO: [Common 17-206] Exiting Webtalk at Sat Oct 21 22:04:42 2017...

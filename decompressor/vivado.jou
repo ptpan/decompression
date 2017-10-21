@@ -1,0 +1,22 @@
+#-----------------------------------------------------------
+# Vivado v2014.3.1 (64-bit)
+# SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+# IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+# Start of session at: Sun Oct 22 01:19:42 2017
+# Process ID: 14090
+# Log file: /home/ppan/vivado.log
+# Journal file: /home/ppan/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/ppan/decompression_backend/decompression_backend.xpr
+launch_runs synth_1
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+open_run synth_1 -name synth_1
+create_clock -period 3.500 -name clk -waveform {0.000 1.750} [get_ports aclk]
+report_timing_summary -delay_type min_max -report_unconstrained -check_timing_verbose -max_paths 10 -input_pins -name timing_1
+archive_project /home/ppan/decompression_backend.xpr.zip -force -exclude_run_results -include_config_settings
+close_project
+open_project /home/ppan/decompressor/decompressor.xpr
+update_compile_order -fileset sources_1
+archive_project /home/ppan/decompressor.xpr.zip -force -exclude_run_results -include_config_settings

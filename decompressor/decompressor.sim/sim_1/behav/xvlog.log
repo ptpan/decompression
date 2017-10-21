@@ -1,0 +1,9 @@
+Determining compilation order of HDL files.
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/decompressor/decompressor.srcs/sources_1/new/decompressor_16.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor_16
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/decompressor/decompressor.srcs/sources_1/new/decompressor_8.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor_8
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/decompressor/decompressor.srcs/sim_1/new/decompressor_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module decompressor_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "/home/ppan/decompressor/decompressor.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
