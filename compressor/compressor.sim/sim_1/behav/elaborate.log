@@ -1,0 +1,23 @@
+Vivado Simulator 2014.3
+Copyright 1986-1999, 2001-2014 Xilinx, Inc. All Rights Reserved.
+Running: /home/ppan/Vivado/Vivado/2014.3.1/bin/unwrapped/lnx64.o/xelab -wto e30c9f1ede61483ea53c1c6d2dc243cb --debug typical --relax -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot compressor_tb_behav xil_defaultlib.compressor_tb xil_defaultlib.glbl -log elaborate.log 
+Multi-threading is on. Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "/home/ppan/compressor/compressor.srcs/sources_1/new/compressor_top.v" Line 1. Module compressor_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/compressor/compressor.srcs/sources_1/new/compressor_8.v" Line 1. Module compressor_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/compressor/compressor.srcs/sources_1/new/compressor_16.v" Line 1. Module compressor_16 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/compressor/compressor.srcs/sources_1/new/compressor_top.v" Line 1. Module compressor_top doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/compressor/compressor.srcs/sources_1/new/compressor_8.v" Line 1. Module compressor_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "/home/ppan/compressor/compressor.srcs/sources_1/new/compressor_16.v" Line 1. Module compressor_16 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.compressor_8
+Compiling module xil_defaultlib.compressor_16
+Compiling module xil_defaultlib.compressor_unit
+Compiling module xil_defaultlib.compressor_top
+Compiling module xil_defaultlib.compressor_tb
+Compiling module xil_defaultlib.glbl
+Waiting for 2 sub-compilation(s) to finish...
+Built simulation snapshot compressor_tb_behav

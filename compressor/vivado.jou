@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# Vivado v2014.3.1 (64-bit)
+# SW Build 1056140 on Thu Oct 30 16:30:39 MDT 2014
+# IP Build 1028902 on Fri Sep 26 17:35:13 MDT 2014
+# Start of session at: Sun Oct 22 21:19:29 2017
+# Process ID: 17335
+# Log file: /home/ppan/vivado.log
+# Journal file: /home/ppan/vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project /home/ppan/VC709_trd/xt_conn_trd/xt_conn_trd.xpr
+create_project compressor /home/ppan/compressor -part xc7vx690tffg1761-2
+set_property board_part xilinx.com:vc709:part0:1.4 [current_project]
+file mkdir /home/ppan/compressor/compressor.srcs/sources_1/new
+close [ open /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_top.v w ]
+add_files /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_top.v
+close [ open /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_8.v w ]
+add_files /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_8.v
+close [ open /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_16.v w ]
+add_files /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_16.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sim_1
+close [ open /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_unit.v w ]
+add_files /home/ppan/compressor/compressor.srcs/sources_1/new/compressor_unit.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir /home/ppan/compressor/compressor.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open /home/ppan/compressor/compressor.srcs/sim_1/new/compressor_tb.v w ]
+add_files -fileset sim_1 /home/ppan/compressor/compressor.srcs/sim_1/new/compressor_tb.v
+update_compile_order -fileset sim_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top compressor_tb [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+update_compile_order -fileset sim_1
+launch_simulation
+launch_simulation
+source compressor_tb.tcl
+restart
+run 5 us
+save_wave_config {/home/ppan/compressor/compressor_tb_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config /home/ppan/compressor/compressor_tb_behav.wcfg
+source compressor_tb.tcl
+archive_project /home/ppan/compressor.xpr.zip -force -exclude_run_results -include_config_settings
