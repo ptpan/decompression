@@ -89,17 +89,6 @@ reg [9:0] real_offset7;
 
 reg [9:0] real_offset_cursor;
 
-/*bitmap_translation bt_inst(
-    .bitmap(bitmap_in),
-    .length_0(offset_reg0),
-    .length_1(offset_reg1),
-    .length_2(offset_reg2),
-    .length_3(offset_reg3),
-    .length_4(offset_reg4),
-    .length_5(offset_reg5),
-    .length_6(offset_reg6),
-    .length_7(offset_reg7)
-);*/
 new_bt bt_inst(
     .aclk(aclk),
     .bitmap(bitmap_in),
@@ -198,6 +187,10 @@ always@(posedge aclk)begin
     else begin
         case(state)
             IDLE: begin
+                write_1_ready <= 0;
+                write_2_ready <= 0;
+                special_case <= 0;
+                cursor <= 0;
                 bram_addra <= 0;
                 bram_dina <= axis_tdata;
                 axis_tready <= 1;
