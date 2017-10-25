@@ -204,12 +204,11 @@ always@(posedge aclk)begin
             WRITE_BRAM: begin  //2
                 axis_tready <= 1;
                 bram_dina <= axis_tdata;
-                if(bram_addra < length_burst_reg && axis_tlast != 1)begin
-                    bram_addra <= bram_addra +1;
+                bram_addra <= bram_addra +1;
+                if(bram_addra < (length_burst_reg - 1) && axis_tlast != 1)begin
                     state <= WRITE_BRAM;
                 end
                 else begin
-                    bram_addra <= bram_addra + 5;
                     start <= 1;
                     length_be <= length_reg;
                     state <= WAIT_BE;
@@ -219,6 +218,7 @@ always@(posedge aclk)begin
 
             WAIT_BE: begin  //4
                 start <= 0;
+                bram_addra <= 6'b111111;
                 if(finish == 1)begin
                     state <= IDLE;
                     axis_tready <= 1;
