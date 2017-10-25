@@ -1,5 +1,3 @@
-
-
 module frontend_top(
     input          aclk,
     input          aresetn,
@@ -14,46 +12,42 @@ module frontend_top(
     input              finish,
     output reg [15:0]  length_be,
 
-    //output         bram_clka,
     output reg [5  :0] bram_addra,
     output reg [255:0] bram_dina
-    //output         bram_ena,
-    //output         bram_wea
 
 );
 
 
-parameter IDLE =            20'd1 ;
-parameter WRITE_BRAM  =     20'd2 ;
-parameter WAIT_BE =         20'd4 ;
-parameter WRITE_HEADER =    20'd8 ;
-parameter CONCAT =          20'd16 ;
-parameter OFFSET1 =         20'd32 ;
-parameter OFFSET2 =         20'd64 ;
-parameter OFFSET3 =         20'd128 ;
-parameter DECOMP =          20'd256 ;
-parameter WRITE_DECOMP =    20'd512 ;
-parameter SPECIAL_CASE =    20'd1024 ;
+parameter IDLE =            11'd1 ;
+parameter WRITE_BRAM  =     11'd2 ;
+parameter WAIT_BE =         11'd4 ;
+parameter WRITE_HEADER =    11'd8 ;
+parameter CONCAT =          11'd16 ;
+parameter OFFSET1 =         11'd32 ;
+parameter OFFSET2 =         11'd64 ;
+parameter OFFSET3 =         11'd128 ;
+parameter DECOMP =          11'd256 ;
+parameter WRITE_DECOMP =    11'd512 ;
+parameter SPECIAL_CASE =    11'd1024 ;
 
-reg [19:0]  state;
+reg [10:0]  state;
 
 
 wire [15:0] length;
 wire [5:0] length_burst;
-wire [15:0] length_tmp;
-
 wire [15:0] eth_type;
 wire [7:0] ip_protocol;
 wire [7:0] ToS;
+wire  arp_length;
 
 wire need_decomp;
 
 assign eth_type = axis_tdata[111:96];
 assign ip_protocol = axis_tdata[191:184];
+assign arp_length = axis_tdata[168];
 
-assign length = (eth_type == 16'h0008) ? ({axis_tdata[135:128],axis_tdata[143:136]} + 16'd14) : 16'd60;
-assign length_tmp = (length >> 5) + 1;
-assign length_burst = length_tmp[5:0];
+assign length = (eth_type == 16'h0008) ? ({axis_tdata[135:128],axis_tdata[143:136]} + 16'd14) : ((arp_length == 1)? 16'd60 : 16'd42);
+assign length_burst = length[10:5];
 
 assign ToS = axis_tdata[127:120];
 
@@ -186,11 +180,7 @@ always@(posedge aclk)begin
     end 
     else begin
         case(state)
-            IDLE: begin
-                write_1_ready <= 0;
-                write_2_ready <= 0;
-                special_case <= 0;
-                cursor <= 0;
+            IDLE: begin //1
                 bram_addra <= 0;
                 bram_dina <= axis_tdata;
                 axis_tready <= 1;
@@ -211,16 +201,15 @@ always@(posedge aclk)begin
                 end
             end
 
-            WRITE_BRAM: begin
+            WRITE_BRAM: begin  //2
                 axis_tready <= 1;
-                if(bram_addra < (length_burst_reg - 1))begin
+                bram_dina <= axis_tdata;
+                if(bram_addra < length_burst_reg && axis_tlast != 1)begin
                     bram_addra <= bram_addra +1;
-                    bram_dina <= axis_tdata;
                     state <= WRITE_BRAM;
                 end
                 else begin
                     bram_addra <= bram_addra + 5;
-                    bram_dina <= bram_dina;
                     start <= 1;
                     length_be <= length_reg;
                     state <= WAIT_BE;
@@ -228,14 +217,7 @@ always@(posedge aclk)begin
                 end
             end
 
-            /*START_BE: begin
-                start <= 1;
-                length_be <= length_reg;
-                state <= WAIT_BE;
-                axis_tready <= 0;
-            end*/
-
-            WAIT_BE: begin
+            WAIT_BE: begin  //4
                 start <= 0;
                 if(finish == 1)begin
                     state <= IDLE;
@@ -247,7 +229,7 @@ always@(posedge aclk)begin
                 end
             end
 
-            WRITE_HEADER: begin
+            WRITE_HEADER: begin  //8
                 bram_addra <= bram_addra +1;
                 if(bram_addra < 3)begin
                     axis_tready <= 1;
@@ -255,6 +237,9 @@ always@(posedge aclk)begin
                     state <= WRITE_HEADER;
                 end
                 else begin
+                    write_1_ready <= 0;
+                    write_2_ready <= 0;
+                    cursor <= 0;
                     axis_tready <= 0;
                     concat_1 <= axis_tdata;
                     bram_dina <= bram_dina;
@@ -262,7 +247,7 @@ always@(posedge aclk)begin
                 end
             end
 
-            CONCAT: begin
+            CONCAT: begin  //16
                 axis_tready <= 0;
                 if(special_case == 1)begin
                     bitmap_in <= 16'hffff;
@@ -273,10 +258,12 @@ always@(posedge aclk)begin
                 end
                 state <= OFFSET1;
             end
-            OFFSET1: begin
+
+            OFFSET1: begin  //32
                 state <= OFFSET2;
             end
-            OFFSET2:begin
+
+            OFFSET2:begin  //64
                 real_offset0 <= (cursor + 16 );
                 real_offset1 <= (cursor + 16 + offset_reg0);
                 real_offset2 <= (cursor + 16 + offset_reg1);
@@ -288,7 +275,8 @@ always@(posedge aclk)begin
                 real_offset_cursor <= 16 + offset_reg7;
                 state <= OFFSET3;
             end
-            OFFSET3: begin
+
+            OFFSET3: begin  //128
                 decomp_in0 <= concat >> real_offset0; 
                 decomp_in1 <= concat >> real_offset1;
                 decomp_in2 <= concat >> real_offset2;
@@ -300,7 +288,8 @@ always@(posedge aclk)begin
                 cursor <= cursor + real_offset_cursor; 
                 state <= DECOMP;
             end
-            DECOMP: begin
+
+            DECOMP: begin  //256
                 case({write_1_ready,write_2_ready})
                     2'b00: begin
                         write_1 <= decomp_result; 
@@ -339,7 +328,8 @@ always@(posedge aclk)begin
                     end
                 endcase
             end
-            WRITE_DECOMP: begin
+
+            WRITE_DECOMP: begin  //512
                 if(bram_addra < 47 )begin
                     bram_addra <= bram_addra + 1;
                     if(cursor >= 256)begin
@@ -367,18 +357,17 @@ always@(posedge aclk)begin
                 end
             end
 
-            SPECIAL_CASE: begin
+            SPECIAL_CASE: begin  //1024
                 concat_1 <= axis_tdata;
                 state <= CONCAT;
             end
+
             default: begin
                 state <= IDLE;
             end
 
-                
         endcase
     end
-
 
 end
 
