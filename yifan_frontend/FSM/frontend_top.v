@@ -1,5 +1,3 @@
-
-
 module frontend_top(
     input          aclk,
     input          aresetn,
@@ -14,48 +12,42 @@ module frontend_top(
     input              finish,
     output reg [15:0]  length_be,
 
-    //output         bram_clka,
     output reg [5  :0] bram_addra,
     output reg [255:0] bram_dina
-    //output         bram_ena,
-    //output         bram_wea
 
 );
 
 
-parameter IDLE = 5'd0 ;
-parameter WRITE_BRAM  = 5'd1 ;
-//parameter START_BE = 5'd2 ;
-parameter WAIT_BE = 5'd2 ;
-parameter WRITE_HEADER = 5'd3 ;
-parameter CONCAT = 5'd4 ;
-parameter OFFSET = 5'd5 ;
-parameter DECOMP = 5'd6 ;
-parameter WRITE_DECOMP = 5'd7;
-//parameter  = 5'd7 ;
-//parameter  = 5'd8 ;
-//parameter  = 5'd9 ;
-//parameter  = 5'd10 ;
+parameter IDLE =            11'd1 ;
+parameter WRITE_BRAM  =     11'd2 ;
+parameter WAIT_BE =         11'd4 ;
+parameter WRITE_HEADER =    11'd8 ;
+parameter CONCAT =          11'd16 ;
+parameter OFFSET1 =         11'd32 ;
+parameter OFFSET2 =         11'd64 ;
+parameter OFFSET3 =         11'd128 ;
+parameter DECOMP =          11'd256 ;
+parameter WRITE_DECOMP =    11'd512 ;
+parameter SPECIAL_CASE =    11'd1024 ;
 
-reg [4:0]  state;
+reg [10:0]  state;
 
 
 wire [15:0] length;
 wire [5:0] length_burst;
-wire [15:0] length_tmp;
-
 wire [15:0] eth_type;
 wire [7:0] ip_protocol;
 wire [7:0] ToS;
+wire  arp_length;
 
 wire need_decomp;
 
 assign eth_type = axis_tdata[111:96];
 assign ip_protocol = axis_tdata[191:184];
+assign arp_length = axis_tdata[168];
 
-assign length = (eth_type == 16'h0008) ? ({axis_tdata[135:128],axis_tdata[143:136]} + 16'd14) : 16'd60;
-assign length_tmp = (length >> 5) + 1;
-assign length_burst = length_tmp[5:0];
+assign length = (eth_type == 16'h0008) ? ({axis_tdata[135:128],axis_tdata[143:136]} + 16'd14) : ((arp_length == 1)? 16'd60 : 16'd42);
+assign length_burst = length[10:5];
 
 assign ToS = axis_tdata[127:120];
 
@@ -80,7 +72,19 @@ wire [9:0] offset_reg5;
 wire [9:0] offset_reg6;
 wire [9:0] offset_reg7;
 
-bitmap_translation bt_inst(
+reg [9:0] real_offset0;
+reg [9:0] real_offset1;
+reg [9:0] real_offset2;
+reg [9:0] real_offset3;
+reg [9:0] real_offset4;
+reg [9:0] real_offset5;
+reg [9:0] real_offset6;
+reg [9:0] real_offset7;
+
+reg [9:0] real_offset_cursor;
+
+new_bt bt_inst(
+    .aclk(aclk),
     .bitmap(bitmap_in),
     .length_0(offset_reg0),
     .length_1(offset_reg1),
@@ -133,6 +137,8 @@ reg [255:0] write_2;
 reg write_1_ready;
 reg write_2_ready;
 
+reg special_case;
+
 
 
 
@@ -149,10 +155,32 @@ always@(posedge aclk)begin
         cursor <= 0;
         write_1_ready <= 0;
         write_2_ready <= 0;
-    end
+        write_1 <= 0;
+        write_2 <= 0;
+        concat_1 <= 0;
+        bitmap_in <= 0;
+        decomp_in0 <= 0 ;
+        decomp_in1 <= 0 ;
+        decomp_in2 <= 0 ;
+        decomp_in3 <= 0 ;
+        decomp_in4 <= 0 ;
+        decomp_in5 <= 0 ;
+        decomp_in6 <= 0 ;
+        decomp_in7 <= 0 ;
+        special_case <= 0;
+        real_offset0 <= 0;
+        real_offset1 <= 0;
+        real_offset2 <= 0;
+        real_offset3 <= 0;
+        real_offset4 <= 0;
+        real_offset5 <= 0;
+        real_offset6 <= 0;
+        real_offset7 <= 0;
+        real_offset_cursor <= 0;
+    end 
     else begin
         case(state)
-            IDLE: begin
+            IDLE: begin //1
                 bram_addra <= 0;
                 bram_dina <= axis_tdata;
                 axis_tready <= 1;
@@ -173,16 +201,14 @@ always@(posedge aclk)begin
                 end
             end
 
-            WRITE_BRAM: begin
+            WRITE_BRAM: begin  //2
                 axis_tready <= 1;
-                if(bram_addra < (length_burst_reg - 1))begin
-                    bram_addra <= bram_addra +1;
-                    bram_dina <= axis_tdata;
+                bram_dina <= axis_tdata;
+                bram_addra <= bram_addra +1;
+                if(bram_addra < (length_burst_reg - 1) && axis_tlast != 1)begin
                     state <= WRITE_BRAM;
                 end
                 else begin
-                    bram_addra <= bram_addra + 5;
-                    bram_dina <= bram_dina;
                     start <= 1;
                     length_be <= length_reg;
                     state <= WAIT_BE;
@@ -190,67 +216,100 @@ always@(posedge aclk)begin
                 end
             end
 
-            /*START_BE: begin
-                start <= 1;
-                length_be <= length_reg;
-                state <= WAIT_BE;
-                axis_tready <= 0;
-            end*/
-
-            WAIT_BE: begin
+            WAIT_BE: begin  //4
                 start <= 0;
-                axis_tready <= 0;
+                bram_addra <= 6'b111111;
                 if(finish == 1)begin
                     state <= IDLE;
+                    axis_tready <= 1;
                 end
                 else begin
                     state <= WAIT_BE;
+                    axis_tready <= 0;
                 end
             end
-            default: begin
-                state <= IDLE;
-            end
 
-            WRITE_HEADER: begin
-                axis_tready <= 1;
-                if(bram_addra < 4)begin
-                    bram_addra <= bram_addra +1;
+            WRITE_HEADER: begin  //8
+                bram_addra <= bram_addra +1;
+                if(bram_addra < 3)begin
+                    axis_tready <= 1;
                     bram_dina <= axis_tdata;
                     state <= WRITE_HEADER;
                 end
                 else begin
+                    write_1_ready <= 0;
+                    write_2_ready <= 0;
+                    cursor <= 0;
+                    axis_tready <= 0;
                     concat_1 <= axis_tdata;
-                    bram_addra <= bram_addra;
                     bram_dina <= bram_dina;
                     state <= CONCAT;
                 end
             end
 
-            CONCAT: begin
+            CONCAT: begin  //16
                 axis_tready <= 0;
-                //concat_2 <= axis_tdata;
-                bitmap_in <= concat >> cursor;
-                state <= OFFSET;
+                if(special_case == 1)begin
+                    bitmap_in <= 16'hffff;
+                    special_case <= 0;
+                end
+                else begin
+                    bitmap_in <= concat >> cursor;
+                end
+                state <= OFFSET1;
             end
 
-            OFFSET: begin
-                decomp_in0 <= concat >> (cursor + 16 + 0);
-                decomp_in1 <= concat >> (cursor + 16 + offset_reg0);
-                decomp_in2 <= concat >> (cursor + 16 + offset_reg1);
-                decomp_in3 <= concat >> (cursor + 16 + offset_reg2);
-                decomp_in4 <= concat >> (cursor + 16 + offset_reg3);
-                decomp_in5 <= concat >> (cursor + 16 + offset_reg4);
-                decomp_in6 <= concat >> (cursor + 16 + offset_reg5);
-                decomp_in7 <= concat >> (cursor + 16 + offset_reg6);
-                cursor <= cursor + 16 + offset_reg7;
+            OFFSET1: begin  //32
+                state <= OFFSET2;
+            end
+
+            OFFSET2:begin  //64
+                real_offset0 <= (cursor + 16 );
+                real_offset1 <= (cursor + 16 + offset_reg0);
+                real_offset2 <= (cursor + 16 + offset_reg1);
+                real_offset3 <= (cursor + 16 + offset_reg2);
+                real_offset4 <= (cursor + 16 + offset_reg3);
+                real_offset5 <= (cursor + 16 + offset_reg4);
+                real_offset6 <= (cursor + 16 + offset_reg5);
+                real_offset7 <= (cursor + 16 + offset_reg6);
+                real_offset_cursor <= 16 + offset_reg7;
+                state <= OFFSET3;
+            end
+
+            OFFSET3: begin  //128
+                decomp_in0 <= concat >> real_offset0; 
+                decomp_in1 <= concat >> real_offset1;
+                decomp_in2 <= concat >> real_offset2;
+                decomp_in3 <= concat >> real_offset3;
+                decomp_in4 <= concat >> real_offset4;
+                decomp_in5 <= concat >> real_offset5;
+                decomp_in6 <= concat >> real_offset6;
+                decomp_in7 <= concat >> real_offset7;
+                cursor <= cursor + real_offset_cursor; 
                 state <= DECOMP;
             end
-            DECOMP: begin
+
+            DECOMP: begin  //256
                 case({write_1_ready,write_2_ready})
                     2'b00: begin
                         write_1 <= decomp_result; 
                         write_1_ready <= 1;
-                        state <= CONCAT;
+                        if(cursor >= 256)begin
+                            cursor <= cursor - 256;
+                            axis_tready <= 1;
+                            concat_1 <= axis_tdata;
+                            state <= CONCAT;
+                        end
+                        else if(cursor == 248 && concat[263:248] == 16'hffff)begin
+                            special_case <= 1;
+                            concat_1 <= axis_tdata;
+                            state <= SPECIAL_CASE;
+                            axis_tready <= 1;
+                            cursor <= -10'd8;
+                        end
+                        else begin
+                            state <= CONCAT;
+                        end
                     end
                     2'b10: begin
                         write_2 <= decomp_result; 
@@ -269,25 +328,46 @@ always@(posedge aclk)begin
                     end
                 endcase
             end
-            WRITE_DECOMP: begin
+
+            WRITE_DECOMP: begin  //512
                 if(bram_addra < 47 )begin
                     bram_addra <= bram_addra + 1;
-                    state <= CONCAT;
-                    if(cursor >= 128)begin
-                        cursor <= cursor - 128;
+                    if(cursor >= 256)begin
+                        cursor <= cursor - 256;
                         axis_tready <= 1;
+                        concat_1 <= axis_tdata;
+                        state <= CONCAT;
+                    end
+                    else if(cursor == 248 && concat[263:248] == 16'hffff)begin
+                        special_case <= 1;
+                        concat_1 <= axis_tdata;
+                        state <= SPECIAL_CASE;
+                        axis_tready <= 1;
+                        cursor <= -10'd8;
+                    end
+                    else begin
+                        state <= CONCAT;
                     end
                 end
                 else begin
                     bram_addra <= bram_addra + 2;
+                    length_be <= 16'h05ea;
                     start <= 1;
                     state <= WAIT_BE;
                 end
             end
-                
+
+            SPECIAL_CASE: begin  //1024
+                concat_1 <= axis_tdata;
+                state <= CONCAT;
+            end
+
+            default: begin
+                state <= IDLE;
+            end
+
         endcase
     end
-
 
 end
 

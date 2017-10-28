@@ -1,15 +1,15 @@
-module bitmap_translation(
+module new_bt(
+    input aclk,
     input      [15:0] bitmap,
-    output     [9:0] length_0 , 
-    output     [9:0] length_1 , 
-    output     [9:0] length_2 , 
-    output     [9:0] length_3 , 
-    output     [9:0] length_4 , 
-    output     [9:0] length_5 , 
-    output     [9:0] length_6 , 
-    output     [9:0] length_7  
+    output  reg   [9:0] length_0 , 
+    output  reg   [9:0] length_1 , 
+    output  reg   [9:0] length_2 , 
+    output  reg   [9:0] length_3 , 
+    output  reg   [9:0] length_4 , 
+    output  reg   [9:0] length_5 , 
+    output  reg   [9:0] length_6 , 
+    output  reg   [9:0] length_7  
 );
-
 
 reg [9:0] offset0 ;
 reg [9:0] offset1 ;
@@ -20,16 +20,26 @@ reg [9:0] offset5 ;
 reg [9:0] offset6 ;
 reg [9:0] offset7 ;
 
+wire [9:0] tmp0;
+wire [9:0] tmp1;
+wire [9:0] tmp2;
+wire [9:0] tmp3;
 
-assign length_0 = offset0;
-assign length_1 = offset0 + offset1;
-assign length_2 = offset2 + length_1;
-assign length_3 = length_1 + (offset2 + offset3);
-assign length_4 = length_3 + offset4;
-assign length_5 = length_3 + (offset4 + offset5);
-assign length_6 = length_5 + offset6;
-assign length_7 = length_3 + ((offset4 + offset5) + (offset6 + offset7));
+assign tmp0 = offset0 + offset1;
+assign tmp1 = offset2 + offset3;
+assign tmp2 = offset4 + offset5;
+assign tmp3 = offset6 + offset7;
 
+always@(posedge aclk)begin
+    length_0 <= offset0;
+    length_1 <= tmp0;
+    length_2 <= tmp0 + offset2;
+    length_3 <= tmp0 + tmp1;
+    length_4 <= (tmp0 + tmp1) + offset4;
+    length_5 <= (tmp0 + tmp1) + tmp2;
+    length_6 <= (tmp0 + tmp1) + (tmp2 + offset6);
+    length_7 <= (tmp0 + tmp1) + (tmp2 +tmp3);
+end
 
 always@(*)begin
     case(bitmap[1:0])
@@ -95,14 +105,6 @@ always@(*)begin
         2'b11: offset7 <= 10'd32;
     endcase
 end
-
-
-
-
-
-
-
-
 
 
 
