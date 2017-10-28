@@ -13,7 +13,9 @@ module frontend_top(
     output reg [15:0]  length_be,
 
     output reg [5  :0] bram_addra,
-    output reg [255:0] bram_dina
+    output reg [255:0] bram_dina,
+
+    output reg need_decomp_reg
 
 );
 
@@ -132,10 +134,8 @@ wire [511:0] concat;
 assign concat = {concat_2,concat_1};
 
 reg [255:0] write_1;
-reg [255:0] write_2;
 
 reg write_1_ready;
-reg write_2_ready;
 
 reg special_case;
 
@@ -154,9 +154,7 @@ always@(posedge aclk)begin
         length_be <= 0;
         cursor <= 0;
         write_1_ready <= 0;
-        write_2_ready <= 0;
         write_1 <= 0;
-        write_2 <= 0;
         concat_1 <= 0;
         bitmap_in <= 0;
         decomp_in0 <= 0 ;
@@ -177,6 +175,7 @@ always@(posedge aclk)begin
         real_offset6 <= 0;
         real_offset7 <= 0;
         real_offset_cursor <= 0;
+        need_decomp_reg <= 0;
     end 
     else begin
         case(state)
@@ -184,6 +183,7 @@ always@(posedge aclk)begin
                 bram_addra <= 0;
                 bram_dina <= axis_tdata;
                 axis_tready <= 1;
+                need_decomp_reg <= need_decomp;
                 if(axis_tvalid == 1)begin
                     length_reg <= length;
                     length_burst_reg <= length_burst;
@@ -202,7 +202,7 @@ always@(posedge aclk)begin
             end
 
             WRITE_BRAM: begin  //2
-                axis_tready <= 1;
+                /*axis_tready <= 1;
                 bram_dina <= axis_tdata;
                 bram_addra <= bram_addra +1;
                 if(bram_addra < (length_burst_reg - 1) && axis_tlast != 1)begin
@@ -213,6 +213,12 @@ always@(posedge aclk)begin
                     length_be <= length_reg;
                     state <= WAIT_BE;
                     axis_tready <= 0;
+                end*/
+                if(axis_tlast == 1)begin
+                    state <= IDLE;
+                end
+                else begin
+                    state <= WRITE_BRAM;
                 end
             end
 
@@ -238,7 +244,6 @@ always@(posedge aclk)begin
                 end
                 else begin
                     write_1_ready <= 0;
-                    write_2_ready <= 0;
                     cursor <= 0;
                     axis_tready <= 0;
                     concat_1 <= axis_tdata;
@@ -290,7 +295,7 @@ always@(posedge aclk)begin
             end
 
             DECOMP: begin  //256
-                case({write_1_ready,write_2_ready})
+               /* case({write_1_ready,write_2_ready})
                     2'b00: begin
                         write_1 <= decomp_result; 
                         write_1_ready <= 1;
@@ -326,7 +331,32 @@ always@(posedge aclk)begin
                         write_1 <= write_2;
                         state <= WRITE_DECOMP;
                     end
-                endcase
+                endcase*/
+                if(write_1_ready == 0)begin
+                    write_1 <= decomp_result; 
+                    write_1_ready <= 1;
+                    if(cursor >= 256)begin
+                        cursor <= cursor - 256;
+                        axis_tready <= 1;
+                        concat_1 <= axis_tdata;
+                        state <= CONCAT;
+                    end
+                    else if(cursor == 248 && concat[263:248] == 16'hffff)begin
+                        special_case <= 1;
+                        concat_1 <= axis_tdata;
+                        state <= SPECIAL_CASE;
+                        axis_tready <= 1;
+                        cursor <= -10'd8;
+                    end
+                    else begin
+                        state <= CONCAT;
+                    end
+                end
+                else begin
+                    bram_dina <= {decomp_result[175:0],write_1[255:176]};
+                    write_1 <= decomp_result; 
+                    state <= WRITE_DECOMP;
+                end
             end
 
             WRITE_DECOMP: begin  //512
