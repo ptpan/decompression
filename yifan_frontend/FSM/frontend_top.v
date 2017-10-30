@@ -20,18 +20,17 @@ module frontend_top(
 );
 
 
-parameter IDLE =            12'd1 ;
-parameter WRITE_BRAM  =     12'd2 ;
-parameter WAIT_BE =         12'd4 ;
-parameter WRITE_HEADER =    12'd8 ;
-parameter CONCAT =          12'd16 ;
-parameter OFFSET1 =         12'd32 ;
-parameter OFFSET2 =         12'd64 ;
-parameter OFFSET3 =         12'd128 ;
-parameter DECOMP =          12'd256 ;
-parameter WRITE_DECOMP =    12'd512 ;
-parameter SPECIAL_CASE1 =   12'd1024 ;
-parameter SPECIAL_CASE2 =   12'd2048 ;
+parameter IDLE =            11'd1 ;
+parameter WRITE_BRAM  =     11'd2 ;
+parameter WAIT_BE =         11'd4 ;
+parameter WRITE_HEADER =    11'd8 ;
+parameter CONCAT =          11'd16 ;
+parameter OFFSET1 =         11'd32 ;
+parameter OFFSET2 =         11'd64 ;
+parameter OFFSET3 =         11'd128 ;
+parameter DECOMP =          11'd256 ;
+parameter WRITE_DECOMP =    11'd512 ;
+parameter SPECIAL_CASE =    11'd1024 ;
 
 reg [10:0]  state;
 
@@ -292,7 +291,7 @@ always@(posedge aclk)begin
                         axis_tready <= 1;
                         concat_1 <= axis_tdata;
                         if(cursor >= 496)begin
-                            state <= SPECIAL_CASE2;
+                            state <= SPECIAL_CASE;
                         end
                         else begin
                             state <= CONCAT;
@@ -301,7 +300,7 @@ always@(posedge aclk)begin
                     else if(cursor == 248 && concat[263:248] == 16'hffff)begin
                         special_case <= 1;
                         concat_1 <= axis_tdata;
-                        state <= SPECIAL_CASE1;
+                        state <= CONCAT;
                         axis_tready <= 1;
                         cursor <= -10'd8;
                     end
@@ -324,7 +323,7 @@ always@(posedge aclk)begin
                         axis_tready <= 1;
                         concat_1 <= axis_tdata;
                         if(cursor >= 496)begin
-                            state <= SPECIAL_CASE2;
+                            state <= SPECIAL_CASE;
                         end
                         else begin
                             state <= CONCAT;
@@ -333,7 +332,7 @@ always@(posedge aclk)begin
                     else if(cursor == 248 && concat[263:248] == 16'hffff)begin
                         special_case <= 1;
                         concat_1 <= axis_tdata;
-                        state <= SPECIAL_CASE1;
+                        state <= CONCAT;
                         axis_tready <= 1;
                         cursor <= -10'd8;
                     end
@@ -349,12 +348,7 @@ always@(posedge aclk)begin
                 end
             end
 
-            SPECIAL_CASE1: begin  //1024
-                concat_1 <= axis_tdata;
-                state <= CONCAT;
-            end
-
-            SPECIAL_CASE2: begin  //1024
+            SPECIAL_CASE: begin  //1024
                 axis_tready <= 0;
                 state <= CONCAT;
             end
