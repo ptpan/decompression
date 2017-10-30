@@ -316,7 +316,7 @@ always@(posedge aclk)begin
             end
 
             WRITE_DECOMP: begin  //512
-                if(bram_addra < 47 )begin
+                if(bram_addra < 46 )begin
                     bram_addra <= bram_addra + 1;
                     if(cursor >= 256)begin
                         cursor <= cursor - 256;
@@ -339,6 +339,11 @@ always@(posedge aclk)begin
                     else begin
                         state <= CONCAT;
                     end
+                end
+                else if(bram_addra == 46)begin
+                    bram_addra <= bram_addra + 1;
+                    bram_dina <= {176'h0,write_1[255:176]};
+                    state <= WRITE_DECOMP;
                 end
                 else begin
                     bram_addra <= bram_addra + 2;
